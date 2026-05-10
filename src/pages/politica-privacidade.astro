@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title="Política de Privacidade | ByHenrique"
+  description="Política de privacidade do site ByHenrique."
+>
+  <main>
+    <section class="page-section">
+      <div class="container legal-content">
+        <p class="eyebrow">Informação legal</p>
+
+        <h1>Política de Privacidade</h1>
+
+        <p>
+          Esta política explica de forma simples como os dados enviados através
+          deste site são usados.
+        </p>
+
+        <h2>Dados recolhidos</h2>
+
+        <p>
+          Quando preenches um formulário neste site, podem ser recolhidos dados
+          como nome, email, telefone, localidade, data pretendida, número de
+          pessoas, preferências alimentares, alergias ou outras informações que
+          escolhas enviar.
+        </p>
+
+        <h2>Finalidade</h2>
+
+        <p>
+          Os dados são usados apenas para responder ao teu pedido, confirmar
+          disponibilidade, preparar uma proposta, orçamento ou contacto
+          relacionado com os serviços ByHenrique.
+        </p>
+
+        <h2>Partilha de dados</h2>
+
+        <p>
+          Os dados não serão vendidos nem partilhados para fins comerciais.
+          Poderão ser processados por serviços técnicos usados para receber ou
+          armazenar mensagens enviadas pelo formulário.
+        </p>
+
+        <h2>Conservação</h2>
+
+        <p>
+          Os dados serão conservados apenas pelo tempo necessário para responder
+          ao pedido e gerir eventuais comunicações relacionadas.
+        </p>
+
+        <h2>Direitos</h2>
+
+        <p>
+          Podes pedir acesso, correção ou eliminação dos teus dados através do
+          email:
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+
+        <h2>Nota</h2>
+
+        <p>
+          Esta página é uma base inicial e deve ser ajustada aos dados reais do
+          negócio, entidade responsável e ferramentas usadas no formulário.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

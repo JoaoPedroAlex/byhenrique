@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import OrderForm from "../components/OrderForm.astro";
+---
+
+<BaseLayout
+  title="Encomendar | ByHenrique"
+  description="Pede orçamento para Chef em casa, take away ou evento privado."
+>
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <p class="eyebrow">Encomendar</p>
+
+        <h1>Pedir orçamento ou reservar</h1>
+
+        <p class="lead">
+          Preenche o formulário com os detalhes do pedido. Depois entrarei em
+          contacto para confirmar disponibilidade, menu, condições e valor final.
+        </p>
+
+        <OrderForm />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

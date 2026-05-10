@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title="Condições de Encomenda | ByHenrique"
+  description="Condições de encomenda e reserva dos serviços ByHenrique."
+>
+  <main>
+    <section class="page-section">
+      <div class="container legal-content">
+        <p class="eyebrow">Informação legal</p>
+
+        <h1>Condições de Encomenda</h1>
+
+        <p>
+          Estas condições explicam como funcionam os pedidos, reservas e
+          encomendas feitas através do site ByHenrique.
+        </p>
+
+        <h2>Pedidos</h2>
+
+        <p>
+          O envio de um formulário não confirma automaticamente a reserva,
+          encomenda ou serviço. Cada pedido fica sujeito a confirmação de
+          disponibilidade, detalhes do menu, local, horário e valor final.
+        </p>
+
+        <h2>Orçamentos</h2>
+
+        <p>
+          Os preços apresentados no site são indicativos. O valor final pode
+          variar conforme o número de pessoas, tipo de serviço, ingredientes,
+          deslocação, data, horário e necessidades específicas.
+        </p>
+
+        <h2>Alergias e intolerâncias</h2>
+
+        <p>
+          O cliente deve informar antecipadamente todas as alergias,
+          intolerâncias ou restrições alimentares relevantes. Apesar do cuidado
+          na preparação, pode existir risco de contaminação cruzada.
+        </p>
+
+        <h2>Confirmação</h2>
+
+        <p>
+          A reserva ou encomenda só fica confirmada após acordo entre as partes
+          sobre menu, data, horário, local, valor e eventuais condições de
+          pagamento.
+        </p>
+
+        <h2>Cancelamentos</h2>
+
+        <p>
+          As condições de cancelamento devem ser acordadas no momento da
+          confirmação, podendo variar conforme o tipo de serviço, antecedência e
+          ingredientes já adquiridos.
+        </p>
+
+        <h2>Contacto</h2>
+
+        <p>
+          Para dúvidas sobre pedidos ou reservas, contacta:
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+
+        <h2>Nota</h2>
+
+        <p>
+          Esta página é uma base inicial e deve ser ajustada às condições reais
+          do negócio antes da publicação final.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

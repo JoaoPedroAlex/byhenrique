@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Página não encontrada | ByHenrique"
+  description="A página que procuras não foi encontrada."
+>
+  <main>
+    <section class="page-section">
+      <div class="container not-found">
+        <p class="eyebrow">Erro 404</p>
+
+        <h1>Página não encontrada</h1>
+
+        <p class="lead">
+          O endereço que tentaste abrir não existe ou pode ter sido alterado.
+        </p>
+
+        <div class="not-found-actions">
+          <a class="button" href="/">Voltar ao início</a>
+          <a class="button secondary" href="/menus">Ver menus</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

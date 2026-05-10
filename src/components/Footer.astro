@@ -1,0 +1,32 @@
+---
+import { site } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h2>{site.name}</h2>
+      <p>
+        Chef privado, menus personalizados e take away por encomenda.
+      </p>
+    </div>
+
+    <div>
+      <h3>Contactos</h3>
+      <p>Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p>Telefone: <a href={`tel:${site.phoneHref}`}>{site.phoneLabel}</a></p>
+      <p>WhatsApp: <a href={site.whatsappUrl}>Enviar mensagem</a></p>
+    </div>
+
+    <div>
+      <h3>Informação</h3>
+      <p><a href="/politica-privacidade">Política de privacidade</a></p>
+      <p><a href="/condicoes">Condições de encomenda</a></p>
+      <p><a href="/contacto">Contacto</a></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 {site.name}. Todos os direitos reservados.</p>
+  </div>
+</footer>

@@ -1,0 +1,55 @@
+---
+import type { MenuItem } from "../data/menus";
+
+type Props = {
+  menu: MenuItem;
+};
+
+const { menu } = Astro.props;
+---
+
+<article class="card menu-card">
+  <div class="menu-image-placeholder">
+    <span>{menu.name}</span>
+  </div>
+
+  <div>
+    <p class="menu-category">
+      {
+        menu.category === "chef-em-casa"
+          ? "Chef em casa"
+          : menu.category === "take-away"
+            ? "Take away"
+            : "Evento"
+      }
+    </p>
+
+    <h2>{menu.name}</h2>
+
+    <p>{menu.description}</p>
+  </div>
+
+  <ul>
+    {menu.dishes.map((dish) => <li>{dish}</li>)}
+  </ul>
+
+  <div class="menu-footer">
+    <strong>{menu.priceLabel}</strong>
+
+    {
+      menu.minPeople && (
+        <span>Mínimo: {menu.minPeople} pessoas</span>
+      )
+    }
+  </div>
+
+  {
+    menu.allergens && (
+      <p class="allergens">{menu.allergens}</p>
+    )
+  }
+
+  <a class="button" href={`/encomendar?menu=${menu.id}`}>
+    Encomendar este menu
+  </a>
+</article>

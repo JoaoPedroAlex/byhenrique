@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title="Contacto | ByHenrique"
+  description="Contacta ByHenrique para pedidos de Chef privado, take away e eventos personalizados."
+>
+  <main>
+    <section class="page-section">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contacto</p>
+
+          <h1>Vamos falar sobre o teu pedido?</h1>
+
+          <p class="lead">
+            Entra em contacto para esclarecer dúvidas, confirmar disponibilidade
+            ou pedir uma proposta personalizada.
+          </p>
+
+          <div class="contact-actions">
+            <a class="button" href="/encomendar">Preencher formulário</a>
+            <a class="button secondary" href={site.whatsappUrl}>
+              Enviar WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <aside class="card contact-card">
+          <h2>Contactos</h2>
+
+          <p>
+            <strong>Email</strong><br />
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </p>
+
+          <p>
+            <strong>Telefone</strong><br />
+            <a href={`tel:${site.phoneHref}`}>{site.phoneLabel}</a>
+          </p>
+
+          <p>
+            <strong>WhatsApp</strong><br />
+            <a href={site.whatsappUrl}>Enviar mensagem</a>
+          </p>
+
+          <p>
+            <strong>Zona de atuação</strong><br />
+            {site.location}
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-section highlight-section">
+      <div class="container">
+        <p class="eyebrow">Antes de contactar</p>
+
+        <h2>Informação útil para enviar no pedido.</h2>
+
+        <div class="info-grid">
+          <article class="card">
+            <h3>Data e horário</h3>
+            <p>
+              Indica a data pretendida e, se possível, uma janela horária.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Número de pessoas</h3>
+            <p>
+              Diz quantas pessoas ou doses pretendes para o serviço ou encomenda.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Preferências alimentares</h3>
+            <p>
+              Refere alergias, intolerâncias, restrições ou preferências de menu.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
