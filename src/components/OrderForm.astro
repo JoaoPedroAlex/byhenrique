@@ -29,9 +29,13 @@ const isEn = lang === "en";
       {isEn ? "Request type" : "Tipo de pedido"}
       <select name="tipo_pedido" id="tipo_pedido" required>
         <option value="">{isEn ? "Select..." : "Selecionar..."}</option>
-        <option value="chef-em-casa">{isEn ? "Private chef" : "Chef em casa"}</option>
+        <option value="chef-em-casa"
+          >{isEn ? "Private chef" : "Chef em casa"}</option
+        >
         <option value="take-away">{isEn ? "Takeaway" : "Take away"}</option>
-        <option value="evento">{isEn ? "Private event" : "Evento privado"}</option>
+        <option value="evento"
+          >{isEn ? "Private event" : "Evento privado"}</option
+        >
         <option value="outro">{isEn ? "Other" : "Outro"}</option>
       </select>
     </label>
@@ -51,15 +55,22 @@ const isEn = lang === "en";
       <input type="number" name="quantidade" min="1" required />
     </label>
 
-    <label>
-      {isEn ? "Preferred menu" : "Menu pretendido"}
-      <input
-        type="text"
-        name="menu"
-        id="menu"
-        placeholder={isEn ? "Example: Traditional Menu" : "Ex.: Menu Tradicional"}
-      />
-    </label>
+    <div class="menu-field" id="menu-field">
+      <label>
+        {isEn ? "Preferred menu" : "Menu pretendido"}
+        <select name="menu" id="menu">
+          <option value="">
+            {isEn ? "Select a menu..." : "Selecionar menu..."}
+          </option>
+          <option value="Laventenian Menu">Laventenian Menu</option>
+          <option value="Athena’s Table">Athena’s Table</option>
+          <option value="Fado Menu">Fado Menu</option>
+          <option value="custom">
+            {isEn ? "Custom proposal" : "Proposta personalizada"}
+          </option>
+        </select>
+      </label>
+    </div>
   </div>
 
   <div class="selected-menu-note" id="selected-menu-note" hidden></div>
@@ -70,7 +81,11 @@ const isEn = lang === "en";
   </label>
 
   <label>
-    {isEn ? "Allergies or food intolerances" : "Alergias ou intolerâncias alimentares"}
+    {
+      isEn
+        ? "Allergies or food intolerances"
+        : "Alergias ou intolerâncias alimentares"
+    }
     <textarea name="alergias" rows="3"></textarea>
   </label>
 
@@ -80,11 +95,9 @@ const isEn = lang === "en";
       name="mensagem"
       rows="5"
       required
-      placeholder={
-        isEn
-          ? "Tell me what you need: occasion, number of guests, type of menu, approximate location, dietary restrictions, etc."
-          : "Conta-me o que pretendes: ocasião, número de pessoas, tipo de menu, morada aproximada, restrições alimentares, etc."
-      }
+      placeholder={isEn
+        ? "Tell me what you need: occasion, number of guests, type of menu, approximate location, dietary restrictions, etc."
+        : "Conta-me o que pretendes: ocasião, número de pessoas, tipo de menu, morada aproximada, restrições alimentares, etc."}
     ></textarea>
   </label>
 
@@ -112,28 +125,42 @@ const isEn = lang === "en";
 
 <script define:vars={{ isEn }}>
   const menus = {
-    tradicional: {
-      name: isEn ? "Traditional Menu" : "Menu Tradicional",
+    laventenian: {
+      name: "Laventenian Menu",
       category: "chef-em-casa",
     },
-    mediterranico: {
-      name: isEn ? "Mediterranean Menu" : "Menu Mediterrânico",
+    "athenas-table": {
+      name: "Athena’s Table",
       category: "chef-em-casa",
     },
-    "take-away-familiar": {
-      name: isEn ? "Family Takeaway" : "Take Away Familiar",
-      category: "take-away",
+    fado: {
+      name: "Fado Menu",
+      category: "chef-em-casa",
     },
   };
 
   const params = new URLSearchParams(window.location.search);
   const selectedMenuId = params.get("menu");
 
+  const menuField = document.querySelector("#menu-field");
+  const tipoPedidoSelect = document.querySelector("#tipo_pedido");
+
+  function updateMenuFieldVisibility() {
+    if (!menuField || !tipoPedidoSelect) return;
+
+    const shouldShowMenuField = tipoPedidoSelect.value === "chef-em-casa";
+
+    menuField.hidden = !shouldShowMenuField;
+  }
+
+  if (tipoPedidoSelect) {
+    tipoPedidoSelect.addEventListener("change", updateMenuFieldVisibility);
+  }
+
   if (selectedMenuId && menus[selectedMenuId]) {
     const selectedMenu = menus[selectedMenuId];
 
     const menuInput = document.querySelector("#menu");
-    const tipoPedidoSelect = document.querySelector("#tipo_pedido");
     const selectedMenuNote = document.querySelector("#selected-menu-note");
 
     if (menuInput) {
@@ -149,4 +176,6 @@ const isEn = lang === "en";
       selectedMenuNote.innerHTML = `<strong>${isEn ? "Selected menu" : "Menu selecionado"}:</strong> ${selectedMenu.name}`;
     }
   }
+
+  updateMenuFieldVisibility();
 </script>

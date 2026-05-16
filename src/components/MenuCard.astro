@@ -10,57 +10,62 @@ const { menu, lang = "pt" } = Astro.props;
 
 const content = lang === "en" ? menu.en : menu.pt;
 
-const categoryLabel =
-  menu.category === "chef-em-casa"
-    ? lang === "en"
-      ? "Private chef"
-      : "Chef em casa"
-    : menu.category === "take-away"
-      ? lang === "en"
-        ? "Takeaway"
-        : "Take away"
-      : lang === "en"
-        ? "Event"
-        : "Evento";
-
 const orderLabel = lang === "en" ? "Order this menu" : "Encomendar este menu";
-const minimumLabel = lang === "en" ? "Minimum" : "Mínimo";
-const peopleLabel = lang === "en" ? "people" : "pessoas";
 const orderPath = lang === "en" ? "/en/order" : "/encomendar";
+const experienceTitle = lang === "en" ? "Menu experience" : "Experiência do menu";
 ---
 
-<article class="card menu-card">
+<article class="card menu-card menu-experience-card">
   <div class="menu-image-placeholder">
     <span>{content.name}</span>
   </div>
 
   <div>
-    <p class="menu-category">{categoryLabel}</p>
-
+    <p class="menu-category">ByHenrique Experience</p>
     <h2>{content.name}</h2>
-
+    <p class="menu-subtitle">{content.subtitle}</p>
     <p>{content.description}</p>
   </div>
 
-  <ul>
-    {content.dishes.map((dish) => <li>{dish}</li>)}
-  </ul>
+  <div class="menu-section">
+    <h3>{content.startersTitle}</h3>
 
-  <div class="menu-footer">
-    <strong>{content.priceLabel}</strong>
-
-    {
-      menu.minPeople && (
-        <span>{minimumLabel}: {menu.minPeople} {peopleLabel}</span>
-      )
-    }
+    <div class="menu-items">
+      {
+        content.starters.map((item) => (
+          <div class="menu-item">
+            <strong>{item.name}</strong>
+            <p>{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
 
-  {
-    content.allergens && (
-      <p class="allergens">{content.allergens}</p>
-    )
-  }
+  <div class="menu-section">
+    <h3>{content.mainTitle}</h3>
+
+    <div class="menu-item">
+      <strong>{content.main.name}</strong>
+      <p>{content.main.description}</p>
+    </div>
+  </div>
+
+  <div class="menu-section">
+    <h3>{content.dessertTitle}</h3>
+
+    <div class="menu-item">
+      <strong>{content.dessert.name}</strong>
+      <p>{content.dessert.description}</p>
+    </div>
+  </div>
+
+  <div class="menu-experience-box">
+    <h3>{experienceTitle}</h3>
+    <ul>
+      {content.experience.map((line) => <li>{line}</li>)}
+    </ul>
+  </div>
 
   <a class="button" href={`${orderPath}?menu=${menu.id}`}>
     {orderLabel}
