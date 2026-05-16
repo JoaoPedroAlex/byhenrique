@@ -6,16 +6,27 @@ import { site } from "../data/site";
   <div class="container footer-grid">
     <div>
       <h2>{site.name}</h2>
-      <p>
-        Chef privado, menus personalizados e take away por encomenda.
-      </p>
+      <p>Chef privado, menus personalizados e take away por encomenda.</p>
     </div>
 
     <div>
       <h3>Contactos</h3>
       <p>Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
-      <p>Telefone: <a href={`tel:${site.phoneHref}`}>{site.phoneLabel}</a></p>
-      <p>WhatsApp: <a href={site.whatsappUrl}>Enviar mensagem</a></p>
+      {
+        site.instagramUrl && (
+          <p>
+            Instagram:{" "}
+            <a
+              href={site.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @byhenrique
+            </a>
+          </p>
+        )
+      }
+      <p>Pedidos: <a href="/encomendar">Preencher formulário</a></p>
     </div>
 
     <div>
