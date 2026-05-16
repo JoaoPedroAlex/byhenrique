@@ -5,12 +5,13 @@ import Footer from "../components/Footer.astro";
 
 const {
   title = "ByHenrique",
-  description = "Chef privado, menus personalizados e take away por encomenda."
+  description = "Chef privado, menus personalizados e take away por encomenda.",
+  lang = "pt",
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pt-PT">
+<html lang={lang === "en" ? "en" : "pt-PT"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +20,7 @@ const {
   </head>
 
   <body>
-    <Header />
+    <Header lang={lang} />
     <slot />
     <Footer />
   </body>

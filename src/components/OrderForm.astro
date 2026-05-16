@@ -1,7 +1,17 @@
+---
+type Props = {
+  lang?: "pt" | "en";
+};
+
+const { lang = "pt" } = Astro.props;
+
+const isEn = lang === "en";
+---
+
 <form class="order-form" method="POST" action="https://formspree.io/f/xjglplld">
   <div class="form-grid">
     <label>
-      Nome
+      {isEn ? "Name" : "Nome"}
       <input type="text" name="nome" required />
     </label>
 
@@ -11,43 +21,43 @@
     </label>
 
     <label>
-      Telefone
+      {isEn ? "Phone" : "Telefone"}
       <input type="tel" name="telefone" required />
     </label>
 
     <label>
-      Tipo de pedido
+      {isEn ? "Request type" : "Tipo de pedido"}
       <select name="tipo_pedido" id="tipo_pedido" required>
-        <option value="">Selecionar...</option>
-        <option value="chef-em-casa">Chef em casa</option>
-        <option value="take-away">Take away</option>
-        <option value="evento">Evento privado</option>
-        <option value="outro">Outro</option>
+        <option value="">{isEn ? "Select..." : "Selecionar..."}</option>
+        <option value="chef-em-casa">{isEn ? "Private chef" : "Chef em casa"}</option>
+        <option value="take-away">{isEn ? "Takeaway" : "Take away"}</option>
+        <option value="evento">{isEn ? "Private event" : "Evento privado"}</option>
+        <option value="outro">{isEn ? "Other" : "Outro"}</option>
       </select>
     </label>
 
     <label>
-      Data pretendida
+      {isEn ? "Preferred date" : "Data pretendida"}
       <input type="date" name="data" required />
     </label>
 
     <label>
-      Hora pretendida
+      {isEn ? "Preferred time" : "Hora pretendida"}
       <input type="time" name="hora" />
     </label>
 
     <label>
-      Número de pessoas ou doses
+      {isEn ? "Number of guests or portions" : "Número de pessoas ou doses"}
       <input type="number" name="quantidade" min="1" required />
     </label>
 
     <label>
-      Menu pretendido
+      {isEn ? "Preferred menu" : "Menu pretendido"}
       <input
         type="text"
         name="menu"
         id="menu"
-        placeholder="Ex.: Menu Tradicional"
+        placeholder={isEn ? "Example: Traditional Menu" : "Ex.: Menu Tradicional"}
       />
     </label>
   </div>
@@ -55,51 +65,63 @@
   <div class="selected-menu-note" id="selected-menu-note" hidden></div>
 
   <label>
-    Localidade / zona
+    {isEn ? "Location / area" : "Localidade / zona"}
     <input type="text" name="localidade" />
   </label>
 
   <label>
-    Alergias ou intolerâncias alimentares
+    {isEn ? "Allergies or food intolerances" : "Alergias ou intolerâncias alimentares"}
     <textarea name="alergias" rows="3"></textarea>
   </label>
 
   <label>
-    Mensagem
+    {isEn ? "Message" : "Mensagem"}
     <textarea
       name="mensagem"
       rows="5"
       required
-      placeholder="Conta-me o que pretendes: ocasião, número de pessoas, tipo de menu, morada aproximada, restrições alimentares, etc."
+      placeholder={
+        isEn
+          ? "Tell me what you need: occasion, number of guests, type of menu, approximate location, dietary restrictions, etc."
+          : "Conta-me o que pretendes: ocasião, número de pessoas, tipo de menu, morada aproximada, restrições alimentares, etc."
+      }
     ></textarea>
   </label>
 
   <label class="checkbox">
     <input type="checkbox" name="consentimento" required />
     <span>
-      Aceito que os meus dados sejam usados para resposta a este pedido.
+      {
+        isEn
+          ? "I agree that my data may be used to respond to this request."
+          : "Aceito que os meus dados sejam usados para resposta a este pedido."
+      }
     </span>
   </label>
 
-  <button type="submit">Enviar pedido</button>
+  <button type="submit">{isEn ? "Send request" : "Enviar pedido"}</button>
 
   <p class="form-note">
-    O envio do formulário não confirma automaticamente a reserva. Entrarei em contacto para confirmar disponibilidade, detalhes e valor final.
+    {
+      isEn
+        ? "Submitting this form does not automatically confirm the booking. I will contact you to confirm availability, details and final price."
+        : "O envio do formulário não confirma automaticamente a reserva. Entrarei em contacto para confirmar disponibilidade, detalhes e valor final."
+    }
   </p>
 </form>
 
-<script>
+<script define:vars={{ isEn }}>
   const menus = {
     tradicional: {
-      name: "Menu Tradicional",
+      name: isEn ? "Traditional Menu" : "Menu Tradicional",
       category: "chef-em-casa",
     },
     mediterranico: {
-      name: "Menu Mediterrânico",
+      name: isEn ? "Mediterranean Menu" : "Menu Mediterrânico",
       category: "chef-em-casa",
     },
     "take-away-familiar": {
-      name: "Take Away Familiar",
+      name: isEn ? "Family Takeaway" : "Take Away Familiar",
       category: "take-away",
     },
   };
@@ -124,7 +146,7 @@
 
     if (selectedMenuNote) {
       selectedMenuNote.hidden = false;
-      selectedMenuNote.innerHTML = `<strong>Menu selecionado:</strong> ${selectedMenu.name}`;
+      selectedMenuNote.innerHTML = `<strong>${isEn ? "Selected menu" : "Menu selecionado"}:</strong> ${selectedMenu.name}`;
     }
   }
 </script>

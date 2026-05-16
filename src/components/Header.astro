@@ -1,13 +1,23 @@
+---
+import { languages } from "../data/i18n";
+
+const { lang = "pt" } = Astro.props;
+
+const currentLang = lang === "en" ? languages.en : languages.pt;
+const otherLang = lang === "en" ? languages.pt : languages.en;
+---
+
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href="/">ByHenrique</a>
+    <a class="logo" href={currentLang.home}>ByHenrique</a>
 
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="/servicos">Serviços</a>
-      <a href="/menus">Menus</a>
-      <a href="/encomendar">Encomendar</a>
-      <a href="/sobre">Sobre</a>
-      <a href="/contacto">Contacto</a>
+    <nav class="nav" aria-label={lang === "en" ? "Main navigation" : "Navegação principal"}>
+      <a href={currentLang.services}>{lang === "en" ? "Services" : "Serviços"}</a>
+      <a href={currentLang.menus}>{lang === "en" ? "Menus" : "Menus"}</a>
+      <a href={currentLang.order}>{lang === "en" ? "Order" : "Encomendar"}</a>
+      <a href={currentLang.about}>{lang === "en" ? "About" : "Sobre"}</a>
+      <a href={currentLang.contact}>{lang === "en" ? "Contact" : "Contacto"}</a>
+      <a class="language-link" href={otherLang.home}>{otherLang.shortLabel}</a>
     </nav>
   </div>
 </header>

@@ -3,53 +3,66 @@ import type { MenuItem } from "../data/menus";
 
 type Props = {
   menu: MenuItem;
+  lang?: "pt" | "en";
 };
 
-const { menu } = Astro.props;
+const { menu, lang = "pt" } = Astro.props;
+
+const content = lang === "en" ? menu.en : menu.pt;
+
+const categoryLabel =
+  menu.category === "chef-em-casa"
+    ? lang === "en"
+      ? "Private chef"
+      : "Chef em casa"
+    : menu.category === "take-away"
+      ? lang === "en"
+        ? "Takeaway"
+        : "Take away"
+      : lang === "en"
+        ? "Event"
+        : "Evento";
+
+const orderLabel = lang === "en" ? "Order this menu" : "Encomendar este menu";
+const minimumLabel = lang === "en" ? "Minimum" : "Mínimo";
+const peopleLabel = lang === "en" ? "people" : "pessoas";
+const orderPath = lang === "en" ? "/en/order" : "/encomendar";
 ---
 
 <article class="card menu-card">
   <div class="menu-image-placeholder">
-    <span>{menu.name}</span>
+    <span>{content.name}</span>
   </div>
 
   <div>
-    <p class="menu-category">
-      {
-        menu.category === "chef-em-casa"
-          ? "Chef em casa"
-          : menu.category === "take-away"
-            ? "Take away"
-            : "Evento"
-      }
-    </p>
+    <p class="menu-category">{categoryLabel}</p>
 
-    <h2>{menu.name}</h2>
+    <h2>{content.name}</h2>
 
-    <p>{menu.description}</p>
+    <p>{content.description}</p>
   </div>
 
   <ul>
-    {menu.dishes.map((dish) => <li>{dish}</li>)}
+    {content.dishes.map((dish) => <li>{dish}</li>)}
   </ul>
 
   <div class="menu-footer">
-    <strong>{menu.priceLabel}</strong>
+    <strong>{content.priceLabel}</strong>
 
     {
       menu.minPeople && (
-        <span>Mínimo: {menu.minPeople} pessoas</span>
+        <span>{minimumLabel}: {menu.minPeople} {peopleLabel}</span>
       )
     }
   </div>
 
   {
-    menu.allergens && (
-      <p class="allergens">{menu.allergens}</p>
+    content.allergens && (
+      <p class="allergens">{content.allergens}</p>
     )
   }
 
-  <a class="button" href={`/encomendar?menu=${menu.id}`}>
-    Encomendar este menu
+  <a class="button" href={`${orderPath}?menu=${menu.id}`}>
+    {orderLabel}
   </a>
 </article>

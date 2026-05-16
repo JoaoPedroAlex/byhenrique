@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MenuCard from "../../components/MenuCard.astro";
+import { menus } from "../../data/menus";
+---
+
+<BaseLayout
+  lang="en"
+  title="Menus | ByHenrique"
+  description="Personalised menus for private chef services, takeaway and private events."
+>
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <p class="eyebrow">Menus</p>
+
+        <h1>Menus and prices</h1>
+
+        <p class="lead">
+          Choose one of the available menus or request a personalised proposal.
+          Final prices may vary depending on the number of guests, location,
+          ingredients and specific needs.
+        </p>
+
+        <div class="menu-grid">
+          {menus.map((menu) => <MenuCard menu={menu} lang="en" />)}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

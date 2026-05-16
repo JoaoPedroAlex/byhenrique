@@ -703,3 +703,8 @@ p {
   flex-wrap: wrap;
   margin-top: 28px;
 }
+
+.language-link {
+  color: var(--brand) !important;
+  font-weight: 900 !important;
+}
