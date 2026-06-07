@@ -157,7 +157,7 @@ export const menus: MenuItem[] = [
     id: "athenas-table",
     category: "chef-em-casa",
     minPeople: 6,
-    image: "/images/menus/athenas-table.jpg",
+    image: "/images/menus/athenas.jpg",
     pt: {
       name: "Athena’s Table",
       subtitle:
