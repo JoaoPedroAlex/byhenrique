@@ -646,16 +646,16 @@ p {
 }
 
 .hero-visual {
+  position: relative;
   min-height: 420px;
   border-radius: 32px;
   border: 1px solid var(--border);
-  background:
-    radial-gradient(circle at top left, rgba(139, 74, 43, 0.28), transparent 35%),
-    linear-gradient(135deg, #fff8f0, #eadccc);
   box-shadow: 0 18px 40px rgba(36, 25, 20, 0.08);
   display: flex;
   align-items: flex-end;
   padding: 28px;
+  overflow: hidden;
+  background: #eadccc;
 }
 
 .hero-visual-content {
