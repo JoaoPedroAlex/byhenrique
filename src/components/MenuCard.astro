@@ -16,9 +16,22 @@ const experienceTitle = lang === "en" ? "Menu experience" : "Experiência do men
 ---
 
 <article class="card menu-card menu-experience-card">
-  <div class="menu-image-placeholder">
-    <span>{content.name}</span>
-  </div>
+ {
+    menu.image ? (
+      <img
+        class="menu-image"
+        src={menu.image}
+        alt={content.name}
+        loading="lazy"
+        width="1200"
+        height="800"
+      />
+    ) : (
+      <div class="menu-image-placeholder">
+        <span>{content.name}</span>
+      </div>
+    )
+  }
 
   <div>
     <p class="menu-category">ByHenrique Experience</p>
