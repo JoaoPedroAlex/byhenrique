@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const galleryImages = [
+  {
+    src: "/images/paella.jpg",
+    alt: "Paella preparada para um evento privado ByHenrique",
+  },
+  {
+    src: "/images/1.jpg",
+    alt: "Mesa preparada para jantar privado ByHenrique",
+  },
+  {
+    src: "/images/hummus.jpg",
+    alt: "Chef Henrique a preparar uma experiência gastronómica",
+  },
+  {
+    src: "/images/IMG_1266_Original.jpg",
+    alt: "Chef Henrique a preparar uma experiência gastronómica",
+  },
+];
+---
+
+<BaseLayout
+  title="Galeria | ByHenrique"
+  description="Galeria de pratos, menus e experiências gastronómicas preparadas por ByHenrique."
+>
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <p class="eyebrow">Galeria</p>
+
+        <h1>Pratos, menus e experiências</h1>
+
+        <p class="lead">
+          Uma selecção de momentos, pratos e experiências gastronómicas criadas
+          para jantares privados, eventos e menus personalizados.
+        </p>
+
+        <div class="gallery-grid">
+          {
+            galleryImages.map((image) => (
+              <figure class="gallery-item">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  width="900"
+                  height="700"
+                />
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
