@@ -827,7 +827,7 @@ p {
   }
 }
 
-.testimonials-grid {
+..testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
@@ -845,7 +845,23 @@ p {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text);
-  margin: 0;
+}
+
+.testimonial-text p {
+  margin: 0 0 1rem;
+}
+
+.testimonial-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.quote-mark {
+  display: inline-block;
+  color: var(--brand);
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
 
 .testimonial-card strong {
