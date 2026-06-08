@@ -101,7 +101,7 @@ export const menus: MenuItem[] = [
         description:
           "Sobremesa síria tradicional com massa tostada embebida em xarope de flor de laranjeira e rosa, coberta com creme cozido rico e pistáchio.",
       },
-      experience: ["Mínimo 6 pessoas.", "65 € por pessoa."],
+      experience: ["Mínimo 6 pessoas.", "Preços sob consulta."],
     },
     en: {
       name: "Laventenian Menu",
@@ -150,7 +150,7 @@ export const menus: MenuItem[] = [
         description:
           "A traditional Syrian Levantine dessert with toasted dough soaked in orange blossom and rose syrup, topped with rich cooked cream and pistachios.",
       },
-      experience: ["Minimum 6 guests.", "65 € per person."],
+      experience: ["Minimum 6 guests.", "Prices under consultation."],
     },
   },
   {
@@ -200,7 +200,7 @@ export const menus: MenuItem[] = [
         description:
           "Bolo grego tradicional de laranja feito com massa filo desfiada e cozido numa calda cítrica rica.",
       },
-      experience: ["Mínimo 6 pessoas.", "65 € por pessoa."],
+      experience: ["Mínimo 6 pessoas.", "Preços sob consulta."],
     },
     en: {
       name: "Athena’s Table",
@@ -244,7 +244,7 @@ export const menus: MenuItem[] = [
         description:
           "Traditional Greek orange cake made with shredded filo pastry baked into a rich citrus syrup.",
       },
-      experience: ["Minimum 6 guests.", "65 € per person."],
+      experience: ["Minimum 6 guests.", "Prices under consultation."],
     },
   },
   {
@@ -289,7 +289,7 @@ export const menus: MenuItem[] = [
         description:
           "Versão do Chef do clássico bolo de bolacha português, servido em delicados frascos em camadas.",
       },
-      experience: ["Mínimo 6 pessoas.", "65 € por pessoa."],
+      experience: ["Mínimo 6 pessoas.", "Preços sob consulta."],
     },
     en: {
       name: "Fado Menu",
@@ -328,7 +328,7 @@ export const menus: MenuItem[] = [
         description:
           "The chef’s version of the beloved Portuguese biscuit cake served in delicate layered jars.",
       },
-      experience: ["Minimum 6 guests.", "65 € per person."],
+      experience: ["Minimum 6 guests.", "Prices under consultation."],
     },
   },
 ];
