@@ -10,6 +10,8 @@ export const languages = {
     order: "/encomendar",
     about: "/sobre",
     contact: "/contacto",
+    testimonials: "/testemunhos",
+    gallery: "/galeria",
   },
   en: {
     label: "English",
@@ -20,5 +22,7 @@ export const languages = {
     order: "/en/order",
     about: "/en/about",
     contact: "/en/contact",
+    testimonials: "/en/testimonials",
+    gallery: "/en/gallery",
   },
 };
