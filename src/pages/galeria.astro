@@ -195,7 +195,7 @@ const galleryImages = [
 
         <div class="gallery-grid">
           {
-            galleryImages.map((image) => (
+            galleryImages.slice().reverse().map((image) => (
               <figure class="gallery-item">
                 <img
                   src={image.src}
