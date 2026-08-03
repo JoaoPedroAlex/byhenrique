@@ -1,18 +1,42 @@
 ---
 import { site } from "../data/site";
+
+const { lang = "pt" } = Astro.props;
+
+const isEn = lang === "en";
+const contactLabel = isEn ? "Contact" : "Contactos";
+const emailLabel = isEn ? "Email" : "Email";
+const ordersLabel = isEn ? "Orders" : "Pedidos";
+const formLabel = isEn ? "Fill in the form" : "Preencher formulário";
+const galleryLabel = isEn ? "Gallery" : "Galeria";
+const infoLabel = isEn ? "Information" : "Informação";
+const privacyLabel = isEn ? "Privacy policy" : "Política de privacidade";
+const termsLabel = isEn ? "Order conditions" : "Condições de encomenda";
+const contactPage = isEn ? "/en/contact" : "/contacto";
+const orderPage = isEn ? "/en/order" : "/encomendar";
+const privacyPage = "/politica-privacidade";
+const termsPage = "/condicoes";
+const galleryPage = "/galeria";
+const copyrightText = isEn ? "All rights reserved." : "Todos os direitos reservados.";
+const descriptionLine1 = isEn
+  ? "Private chef, personalised menus and customised Food Delivery orders."
+  : "Chef privado, menus personalizados e Food Delivery por encomenda.";
+const descriptionLine2 = isEn
+  ? "Available in the Algarve, Alentejo, Greater Lisbon and Central Portugal."
+  : "Disponível no Algarve, Alentejo, Grande Lisboa e Centro de Portugal.";
 ---
 
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
       <h2>{site.name}</h2>
-      <p>Chef privado, menus personalizados e Food Delivery por encomenda.</p>
-      <p>Disponível no Algarve, Alentejo, Grande Lisboa e Centro de Portugal.</p>
+      <p>{descriptionLine1}</p>
+      <p>{descriptionLine2}</p>
     </div>
 
     <div>
-      <h3>Contactos</h3>
-      <p>Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <h3>{contactLabel}</h3>
+      <p>{emailLabel}: <a href={`mailto:${site.email}`}>{site.email}</a></p>
       {
         site.instagramUrl && (
           <p>
@@ -27,19 +51,19 @@ import { site } from "../data/site";
           </p>
         )
       }
-      <p>Pedidos: <a href="/encomendar">Preencher formulário</a></p>
-      <p><a href="/galeria">Galeria</a></p>
+      <p>{ordersLabel}: <a href={orderPage}>{formLabel}</a></p>
+      <p><a href={galleryPage}>{galleryLabel}</a></p>
     </div>
 
     <div>
-      <h3>Informação</h3>
-      <p><a href="/politica-privacidade">Política de privacidade</a></p>
-      <p><a href="/condicoes">Condições de encomenda</a></p>
-      <p><a href="/contacto">Contacto</a></p>
+      <h3>{infoLabel}</h3>
+      <p><a href={privacyPage}>{privacyLabel}</a></p>
+      <p><a href={termsPage}>{termsLabel}</a></p>
+      <p><a href={contactPage}>{isEn ? "Contact" : "Contacto"}</a></p>
     </div>
   </div>
 
   <div class="container footer-bottom">
-    <p>© 2026 {site.name}. Todos os direitos reservados.</p>
+    <p>© 2026 {site.name}. {copyrightText}</p>
   </div>
 </footer>

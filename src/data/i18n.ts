@@ -4,7 +4,7 @@ export const languages = {
   pt: {
     label: "Português",
     shortLabel: "PT",
-    home: "/",
+    home: "/pt",
     services: "/servicos",
     menus: "/menus",
     order: "/encomendar",
@@ -23,6 +23,6 @@ export const languages = {
     about: "/en/about",
     contact: "/en/contact",
     testimonials: "/testemunhos",
-    gallery: "/en/gallery",
+    gallery: "/galeria",
   },
 };

@@ -19,7 +19,7 @@ const otherLang = lang === "en" ? languages.pt : languages.en;
       <a href={currentLang.contact}>{lang === "en" ? "Contact" : "Contacto"}</a>
       <a href={currentLang.testimonials}>{lang === "en" ? "Testimonials" : "Testemunhos"}</a>
       <a href={currentLang.gallery}>{lang === "en" ? "Gallery" : "Galeria"}</a>
-      <a class="language-link" href={otherLang.home}>{otherLang.shortLabel}</a>
+      <a class="language-link" href={otherLang.home}>{lang === "en" ? "Português" : "English"}</a>
     </nav>
   </div>
 </header>
