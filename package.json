@@ -16,5 +16,10 @@
     "@astrojs/sitemap": "^3.7.2",
     "astro": "^6.3.1",
     "typescript": "^6.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.27.7": true,
+    "fsevents@2.3.3": true,
+    "sharp@0.34.5": true
   }
 }
