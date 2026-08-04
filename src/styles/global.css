@@ -882,3 +882,42 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+.booking-cta {
+    margin-top: 3rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    text-align: center;
+    border: 1px solid currentColor;
+    border-radius: 1rem;
+}
+
+.booking-cta h2 {
+    margin-bottom: 0;
+}
+
+.booking-cta > p:not(.eyebrow) {
+    max-width: 42rem;
+    margin: 0.75rem auto 1.5rem;
+}
+
+.booking-cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid currentColor;
+    border-radius: 999px;
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.booking-cta-link:hover {
+    text-decoration: underline;
+}
+
+.booking-cta-link:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 4px;
+}
