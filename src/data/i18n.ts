@@ -22,7 +22,7 @@ export const languages = {
     order: "/en/order",
     about: "/en/about",
     contact: "/en/contact",
-    testimonials: "/testemunhos",
+    testimonials: "/en/testimonials",
     gallery: "/galeria",
   },
 };
