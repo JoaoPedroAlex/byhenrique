@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { testimonials } from "../../data/testimonials";
+---
+
+<BaseLayout
+    title="Private Chef Reviews in Portugal"
+    description="Read reviews from guests who booked ByHenrique for private dinners, holidays, family celebrations, weddings and special events in Portugal."
+>
+    <main>
+        <section class="page-section">
+            <div class="container">
+                <p class="eyebrow">Testimonials</p>
+
+                <h1>What guests say about ByHenrique</h1>
+
+                <p class="lead">
+                    Experiences shared by guests who chose ByHenrique for
+                    private dinners, family celebrations, holidays, weddings
+                    and memorable moments around the table.
+                </p>
+
+                <div class="testimonials-grid">
+                    {
+                        testimonials.map((testimonial) => (
+                            <article class="card testimonial-card">
+                                <div class="testimonial-text">
+                                    <span class="quote-mark">“</span>
+
+                                    {Array.isArray(testimonial.text) ? (
+                                        testimonial.text.map((paragraph) => (
+                                            <p>{paragraph}</p>
+                                        ))
+                                    ) : (
+                                        <p>{testimonial.text}</p>
+                                    )}
+
+                                    <span class="quote-mark">”</span>
+                                </div>
+
+                                <div>
+                                    <strong>{testimonial.name}</strong>
+                                    <span>{testimonial.location}</span>
+                                </div>
+                            </article>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
