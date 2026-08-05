@@ -26,19 +26,30 @@ const isEn = lang === "en";
     </label>
 
     <label>
-      {isEn ? "Request type" : "Tipo de pedido"}
-      <select name="tipo_pedido" id="tipo_pedido" required>
-        <option value="">{isEn ? "Select..." : "Selecionar..."}</option>
-        <option value="chef-em-casa"
-          >{isEn ? "Private chef" : "Chef em casa"}</option
-        >
-        <option value="take-away">{isEn ? "Food Delivery" : "Food Delivery"}</option>
-        <option value="evento"
-          >{isEn ? "Private event" : "Evento privado"}</option
-        >
-        <option value="outro">{isEn ? "Other" : "Outro"}</option>
-      </select>
-    </label>
+  {isEn ? "Request type" : "Tipo de pedido"}
+
+  <select name="tipo_pedido" id="tipo_pedido" required>
+    <option value="">
+      {isEn ? "Select..." : "Selecionar..."}
+    </option>
+
+    <option value="chef-em-casa" selected>
+      {isEn ? "Private chef" : "Chef em casa"}
+    </option>
+
+    <option value="take-away">
+      {isEn ? "Food Delivery" : "Food Delivery"}
+    </option>
+
+    <option value="evento">
+      {isEn ? "Private event" : "Evento privado"}
+    </option>
+
+    <option value="outro">
+      {isEn ? "Other" : "Outro"}
+    </option>
+  </select>
+</label>
 
     <label>
       {isEn ? "Preferred date" : "Data pretendida"}
