@@ -10,6 +10,11 @@ const {
 } = Astro.props;
 
 const siteUrl = "https://byhenrique.pt";
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  Astro.site ?? siteUrl
+).href;
+
 const ogImage = `${siteUrl}/og-image.png`;
 ---
 
@@ -22,11 +27,12 @@ const ogImage = `${siteUrl}/og-image.png`;
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
@@ -36,7 +42,6 @@ const ogImage = `${siteUrl}/og-image.png`;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <slot name="head" />
   </head>
 
   <body>
