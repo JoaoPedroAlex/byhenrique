@@ -1,6 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
 import { testimonials } from "../data/testimonials";
+
+const featuredGoogleReviews = testimonials.slice(0, 3).map((testimonial) => ({
+    name: testimonial.name,
+    location: testimonial.location,
+    text: Array.isArray(testimonial.text)
+        ? testimonial.text[0]
+        : testimonial.text,
+}));
 ---
 
 <BaseLayout
@@ -19,6 +28,45 @@ import { testimonials } from "../data/testimonials";
                     para jantares privados, eventos familiares e experiências
                     gastronómicas à medida.
                 </p>
+
+                <section class="google-reviews-section" aria-labelledby="google-reviews-title">
+                    <div class="google-reviews-header">
+                        <div>
+                            <p class="eyebrow">Google reviews</p>
+                            <h2 id="google-reviews-title">Opiniões de clientes no Google</h2>
+                        </div>
+
+                        <a
+                            class="google-reviews-link"
+                            href={site.googleReviewsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Ver no Google
+                        </a>
+                    </div>
+
+                    <div class="google-review-widget">
+                        <iframe
+                            title="Google reviews for ByHenrique"
+                            src={site.googleReviewsEmbedUrl}
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen
+                        />
+                    </div>
+
+                    <div class="google-reviews-grid">
+                        {featuredGoogleReviews.map((review) => (
+                            <article class="card google-review-card">
+                                <div class="google-review-stars" aria-label="Cinco estrelas">★★★★★</div>
+                                <p class="google-review-text">“{review.text}”</p>
+                                <strong>{review.name}</strong>
+                                <span>{review.location}</span>
+                            </article>
+                        ))}
+                    </div>
+                </section>
 
                 <div class="testimonials-grid">
                     {
