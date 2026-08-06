@@ -36,14 +36,24 @@ const featuredGoogleReviews = testimonials.slice(0, 3).map((testimonial) => ({
                             <h2 id="google-reviews-title">Opiniões de clientes no Google</h2>
                         </div>
 
-                        <a
-                            class="google-reviews-link"
-                            href={site.googleReviewsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Ver no Google
-                        </a>
+                        <div class="google-reviews-actions">
+                            <a
+                                class="google-reviews-link secondary"
+                                href={site.chefMaisonReviewsUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Ver reviews no Chef Maison
+                            </a>
+                            <a
+                                class="google-reviews-link"
+                                href={site.googleReviewsUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Ver no Google
+                            </a>
+                        </div>
                     </div>
 
                     <div class="google-review-widget">
