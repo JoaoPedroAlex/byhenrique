@@ -887,30 +887,6 @@ p {
   border: 0;
 }
 
-.google-reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.google-review-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.google-review-stars {
-  color: var(--brand);
-  letter-spacing: 0.18em;
-  font-size: 1rem;
-}
-
-.google-review-text {
-  margin: 0;
-  color: var(--text);
-  line-height: 1.7;
-}
-
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -967,7 +943,6 @@ p {
     align-items: flex-start;
   }
 
-  .google-reviews-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
   }

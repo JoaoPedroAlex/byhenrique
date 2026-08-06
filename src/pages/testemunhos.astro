@@ -2,14 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 import { testimonials } from "../data/testimonials";
-
-const featuredGoogleReviews = testimonials.slice(0, 3).map((testimonial) => ({
-    name: testimonial.name,
-    location: testimonial.location,
-    text: Array.isArray(testimonial.text)
-        ? testimonial.text[0]
-        : testimonial.text,
-}));
 ---
 
 <BaseLayout
@@ -51,7 +43,7 @@ const featuredGoogleReviews = testimonials.slice(0, 3).map((testimonial) => ({
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Ver no Google
+                                Ler reviews no Google
                             </a>
                         </div>
                     </div>
@@ -66,16 +58,6 @@ const featuredGoogleReviews = testimonials.slice(0, 3).map((testimonial) => ({
                         />
                     </div>
 
-                    <div class="google-reviews-grid">
-                        {featuredGoogleReviews.map((review) => (
-                            <article class="card google-review-card">
-                                <div class="google-review-stars" aria-label="Cinco estrelas">★★★★★</div>
-                                <p class="google-review-text">“{review.text}”</p>
-                                <strong>{review.name}</strong>
-                                <span>{review.location}</span>
-                            </article>
-                        ))}
-                    </div>
                 </section>
 
                 <div class="testimonials-grid">
