@@ -7,13 +7,22 @@ const {
   title = "ByHenrique",
   description = "Chef privado, menus personalizados e Food Delivery por encomenda.",
   lang = "pt",
+  alternateEn,
+  alternatePt,
 } = Astro.props;
 
 const siteUrl = "https://byhenrique.pt";
-const canonicalUrl = new URL(
-  Astro.url.pathname,
-  Astro.site ?? siteUrl
-).href;
+const baseUrl = Astro.site ?? siteUrl;
+
+const canonicalUrl = new URL(Astro.url.pathname, baseUrl).href;
+
+const alternateEnUrl = alternateEn
+  ? new URL(alternateEn, baseUrl).href
+  : null;
+
+const alternatePtUrl = alternatePt
+  ? new URL(alternatePt, baseUrl).href
+  : null;
 
 const ogImage = `${siteUrl}/og-image.png`;
 ---
@@ -28,6 +37,25 @@ const ogImage = `${siteUrl}/og-image.png`;
     <meta name="description" content={description} />
 
     <link rel="canonical" href={canonicalUrl} />
+
+    {
+      alternateEnUrl && (
+        <link rel="alternate" hreflang="en" href={alternateEnUrl} />
+      )
+    }
+
+    {
+      alternatePtUrl && (
+        <link rel="alternate" hreflang="pt-PT" href={alternatePtUrl} />
+      )
+    }
+
+    {
+      alternateEnUrl && (
+        <link rel="alternate" hreflang="x-default" href={alternateEnUrl} />
+      )
+    }
+
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Open Graph -->
