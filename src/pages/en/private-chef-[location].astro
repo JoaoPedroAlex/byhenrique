@@ -1,0 +1,33 @@
+---
+import PrivateChefLocationPage from "../../components/PrivateChefLocationPage.astro";
+
+export function getStaticPaths() {
+  return [
+    ["faro", "Faro", "Olhão, Tavira, Loulé, Quinta do Lago and the eastern Algarve"],
+    ["quinta-do-lago", "Quinta do Lago", "Vale do Lobo, Almancil, Loulé, Vilamoura and Faro"],
+    ["vale-do-lobo", "Vale do Lobo", "Quinta do Lago, Almancil, Loulé, Vilamoura and Faro"],
+    ["troia", "Tróia", "Comporta, Grândola, Alcácer do Sal, Setúbal and the Alentejo coast"],
+    ["comporta", "Comporta", "Tróia, Melides, Grândola, Alcácer do Sal and the Alentejo coast"],
+    ["tavira", "Tavira", "Faro, Olhão, Cabanas de Tavira, Vila Real de Santo António and the eastern Algarve"],
+    ["leiria", "Leiria", "Nazaré, Óbidos, Fátima, Batalha and nearby central Portugal locations"],
+    ["coimbra", "Coimbra", "Lousã, Figueira da Foz, Mealhada, Aveiro and nearby central Portugal locations"],
+    ["grandola", "Grândola", "Comporta, Melides, Tróia, Alcácer do Sal and the Alentejo coast"],
+    ["alcacer-do-sal", "Alcácer do Sal", "Comporta, Grândola, Tróia, Melides and the Alentejo coast"],
+    ["sines", "Sines", "Santo André, Porto Covo, Vila Nova de Milfontes, Santiago do Cacém and the Alentejo coast"],
+    ["santiago-do-cacem", "Santiago do Cacém", "Sines, Santo André, Porto Covo, Vila Nova de Milfontes and the Alentejo coast"],
+  ].map(([slug, location, areas]) => ({ params: { location: slug }, props: { slug, location, areas } }));
+}
+
+const { slug, location, areas } = Astro.props;
+const title = `Private Chef in ${location} | Villa Dining | ByHenrique`;
+const description = `Private chef in ${location} for villa stays, family holidays, celebrations and retreats, with personalised Mediterranean menus and warm hospitality.`;
+---
+
+<PrivateChefLocationPage
+  {location}
+  {areas}
+  {title}
+  {description}
+  bookingId={`${slug}-booking-title`}
+  alternatePt={`/chef-privado-${slug}/`}
+/>
