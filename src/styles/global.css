@@ -336,6 +336,10 @@ button:hover {
   margin-top: 32px;
 }
 
+.services-page .service-grid {
+  margin-top: 20px;
+}
+
 .service-card {
   display: grid;
   gap: 16px;
