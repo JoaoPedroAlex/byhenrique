@@ -1,243 +1,167 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Private Chef Services in Portugal | ByHenrique"
-  description="Private chef services in Portugal for villa stays, celebrations and private events, with personalised menus, preparation, cooking and a relaxed experience around the table."
+  lang="en"
+  title="Private chef in Portugal | Mediterranean Food| ByHenrique"
+  description="Private chef services, personalised menus, catering and private events for dinners and special moments."
 >
   <main>
-    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Private Chef in Portugal · Four Shores. One Table. A Journey Across the Mediterranean
+             · Private Events
+          </p>
+
+          <h1>Where Portugal, Greece, Jordan & Spain meet around one table.
+              Where flavours flirt, and every meal tells a story worth sharing.
+          </h1>
+
+          <p class="lead">
+            ByHenrique brings personalised menus, private chef services, private dinners and family
+            events.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="/en/menus">View menus</a>
+            <a class="button secondary" href="/en/book">Request a quote</a>
+          </div>
+
+          <p class="language-note">
+            Prefer the Portuguese version? <a href="/pt">Ver versão em Português</a>
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            src="/images/hummus.jpg"
+            alt="Experiência de Chef privado ByHenrique"
+            class="hero-visual-image"
+            width="1200"
+            height="900"
+          />
+
+          <div class="hero-visual-content">
+            <p>ByHenrique</p>
+            <h2>Private chef in Portugal</h2>
+            <span>Personalised menus for special moments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="page-section">
       <div class="container">
-        <p class="eyebrow">Private Chef Services</p>
+        <p class="eyebrow">How it works</p>
 
-        <h1>Your Private Chef Experience</h1>
+        <h2>A simple process, from request to table.</h2>
 
-        <p class="lead">
-          My private chef service is about food, culture and a relaxed
-          experience around the table.
-        </p>
+        <div class="steps-grid">
+          <article class="card">
+            <span class="step-number">1</span>
+            <h3>Choose the service</h3>
+            <p>
+              Tell me whether you need a private chef, catering, a private event
+              or a customised proposal.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="step-number">2</span>
+            <h3>Define the menu</h3>
+            <p>
+              We adjust the menu to the number of guests, occasion, preferences
+              and dietary restrictions.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="step-number">3</span>
+            <h3>Confirm the details</h3>
+            <p>
+              I confirm availability, conditions, time, location and final price
+              before the booking is closed.
+            </p>
+          </article>
+        </div>
+
+                <img
+            src="/images/OChefe.jpg"
+            alt="O chefe Henrique"
+            class="section-image"
+            loading="lazy"
+            width="1200"
+            height="800"
+        />  
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <p class="eyebrow">Where I am available</p>
+
+        <h2>Private chef available in several regions of Portugal.</h2>
 
         <p>
-          From menu planning and grocery shopping to preparation, cooking,
-          serving and cleaning, I take care of the food so you can simply enjoy
-          your time together.
+          The <a href="/en/private-chef-algarve/">private chef service in Algarve</a> is
+          available in <a href="/en/private-chef-faro/">Faro</a>,{" "}
+          <a href="/en/private-chef-albufeira/">Albufeira</a>,{" "}
+          <a href="/en/private-chef-vilamoura/">Vilamoura</a>,{" "}
+          <a href="/en/private-chef-quinta-do-lago/">Quinta do Lago</a>,{" "}
+          <a href="/en/private-chef-vale-do-lobo/">Vale do Lobo</a>,{" "}
+          <a href="/en/private-chef-portimao-alvor/">Portimão and Alvor</a>,{" "}
+          <a href="/en/private-chef-lagos/">Lagos</a> and{" "}
+          <a href="/en/private-chef-tavira/">Tavira</a>. The service is also
+          available in <a href="/en/private-chef-alentejo/">Alentejo</a>,{" "}
+          Greater <a href="/en/private-chef-lisbon/">Lisbon</a> and Central Portugal,
+          including <a href="/en/private-chef-cascais/">Cascais</a>,{" "}
+          <a href="/en/private-chef-troia/">Tróia</a>,{" "}
+          <a href="/en/private-chef-comporta/">Comporta</a>,{" "}
+          <a href="/en/private-chef-grandola/">Grândola</a>,{" "}
+          <a href="/en/private-chef-alcacer-do-sal/">Alcácer do Sal</a>,{" "}
+          <a href="/en/private-chef-sines/">Sines</a>,{" "}
+          <a href="/en/private-chef-santiago-do-cacem/">Santiago do Cacém</a>,{" "}
+          <a href="/en/private-chef-leiria/">Leiria</a> and{" "}
+          <a href="/en/private-chef-coimbra/">Coimbra</a>.
         </p>
-      </div>
-    </section>
-
-    <!-- CHEF AT HOME -->
-    <section class="page-section">
-      <div class="container">
-        <div class="service-grid">
-          <article class="card service-card">
-            <p class="eyebrow">The Service</p>
-
-            <h2>Private Chef at Home</h2>
-
-            <p>
-              A personalised dining experience in the comfort of your villa,
-              holiday home or private space.
-            </p>
-
-            <ul>
-              <li>Menu planning</li>
-              <li>Grocery shopping</li>
-              <li>Food preparation</li>
-              <li>Cooking</li>
-              <li>Serving the dishes</li>
-              <li>Cleaning the kitchen and areas I use</li>
-            </ul>
-          </article>
-
-          <article class="card service-card">
-            <p class="eyebrow">Four Shores · One Table</p>
-
-            <h2>More Than a Meal</h2>
-
-            <p>
-              When I present the dishes, I like to share small stories about
-              the ingredients, the cultures behind them and my
-              <em>Four Shores · One Table</em> concept.
-            </p>
-
-            <p>
-              Just enough to give you a little understanding of what you are
-              tasting, with a touch of interaction and hopefully a laugh or
-              two.
-            </p>
-
-            <p>
-              I keep it light and natural, giving you plenty of space to enjoy
-              your evening.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- BEFORE I ARRIVE -->
-    <section class="page-section">
-      <div class="container">
-        <p class="eyebrow">Before I Arrive</p>
-
-        <h2>A Few Simple Preparations</h2>
 
         <p class="lead">
-          A few simple preparations before I arrive help me put all my
-          attention into the cooking.
+          I am available for events and private dining experiences in Marbella, 
+          with transportation and accommodation arranged by the client
         </p>
-
-        <div class="service-grid">
-          <article class="card service-card">
-            <h3>Kitchen & Fridge</h3>
-
-            <p>
-              A clean, organised kitchen with clear counter space makes
-              everything easier. A considerable amount of fridge space is
-              important so I can keep fresh ingredients properly chilled and
-              organised.
-            </p>
-
-            <p>
-              Please also check that the oven is working properly before the
-              dinner.
-            </p>
-          </article>
-
-          <article class="card service-card">
-            <h3>Kitchen & Tableware</h3>
-
-            <p>
-              Before checking in, I recommend asking the rental property to
-              double-check that everything is clean, complete and ready to use,
-              with enough plates, large serving dishes, cutlery, glasses and
-              cooking equipment for everyone.
-            </p>
-
-            <p>
-              A clear counter, empty bins and an empty dishwasher make my work
-              much smoother.
-            </p>
-          </article>
-        </div>
-
-        <div class="card service-note">
-          <p>
-            The kitchen is my office for the day. Give me a good space to
-            create, and I’ll take care of the rest.
-          </p>
-        </div>
       </div>
     </section>
-
-    <!-- TABLE SERVICE -->
-    <section class="page-section">
-      <div class="container">
-        <div class="service-grid">
-          <article class="card service-card">
-            <p class="eyebrow">Table Service</p>
-
-            <h2>Relaxed & Informal</h2>
-
-            <p>
-              If you would like dedicated waiter service, this can be arranged
-              directly by the guests as a separate service.
-            </p>
-
-            <p>
-              Many guests on holiday simply enjoy looking after the table
-              themselves, clearing plates and sharing the evening together. My
-              focus stays on the cooking, the preparation and bringing each dish
-              to the table at its best.
-            </p>
-          </article>
-
-          <article class="card service-card">
-            <p class="eyebrow">Drinks</p>
-
-            <h2>Wine Pairings & More</h2>
-
-            <p>
-              Drinks are not included in the chef service. I’m happy to
-              recommend wine pairings for the menu, as well as non-alcoholic
-              options.
-            </p>
-
-            <p>
-              Drinks can then be purchased separately.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- OPTIONAL EXTRAS -->
-    <section class="page-section">
-      <div class="container">
-        <p class="eyebrow">Optional Extras</p>
-
-        <h2>Little Details That Make a Difference</h2>
-
-        <div class="service-grid">
-          <article class="card service-card">
-            <h3>Flowers for the Table</h3>
-
-            <p>
-              A beautiful floral arrangement can add the final touch. I can
-              arrange something simple and elegant according to the size of
-              your table.
-            </p>
-
-            <p>
-              Usually €25–€65 depending on the arrangement.
-            </p>
-
-            <p>
-              As we say in my homeland, Jordan, “the eye eats before the mouth.”
-              I like the table to look as good as the food tastes.
-            </p>
-          </article>
-
-          <article class="card service-card">
-            <h3>Birthday Cake</h3>
-
-            <p>
-              Happy to arrange one if you are celebrating. This is an
-              additional cost and will be confirmed separately.
-            </p>
-
-            <p>
-              Flowers and birthday cakes are not included in the chef service
-              price and are paid separately.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLOSING -->
-    <section class="page-section">
-      <div class="container">
-        <div class="card service-note">
-          <p class="eyebrow">The ByHenrique Experience</p>
-
-          <h2>Food, Culture & A Memorable Table</h2>
-
-          <p>
-            Being a chef is not simply a job for me. It is my ultimate
-            passion, and somehow that passion led me to become a private chef
-            and host.
+    
+    <section class="page-section highlight-section">
+      <div class="container highlight-grid">
+        <div>
+          <p class="eyebrow">Menus</p>
+          <h2>Menus for different occasions.</h2>
+          <p class="lead">
+            From traditional options to lighter or fully customised menus, each
+            request can be adapted to the occasion, season and guests’
+            preferences.
           </p>
 
-          <p>
-            Let me bring joy and create a memorable experience for you.
-          </p>
+           <img
+            src="/images/IMG_5073.jpg"
+            alt="O Chefe Henrique"
+            class="section-image"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+        </div>
 
-          <a class="button" href="/encomendar">
-            Request Your Private Chef Experience
-          </a>
+        <div class="card">
+          <h3>Need a tailored proposal?</h3>
+          <p>
+            Send the details of your request and receive a menu suggestion,
+            availability confirmation and quote.
+          </p>
+          <a class="button" href="/en/book">Send request</a>
         </div>
       </div>
     </section>
