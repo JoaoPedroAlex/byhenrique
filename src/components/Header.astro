@@ -19,7 +19,31 @@ const otherLang = lang === "en" ? languages.pt : languages.en;
       <a href={currentLang.contact}>{lang === "en" ? "Contact" : "Contacto"}</a>
       <a href={currentLang.testimonials}>{lang === "en" ? "Testimonials" : "Testemunhos"}</a>
       <a href={currentLang.gallery}>{lang === "en" ? "Gallery" : "Galeria"}</a>
-      <a class="language-link" href={otherLang.home}>{lang === "en" ? "Português" : "English"}</a>
+      <a
+        class="language-link"
+        href={
+        {
+          "/": "/en",
+          "/servicos": "/en/services",
+          "/menus": "/en/menus",
+          "/encomendar": "/en/order",
+          "/sobre": "/en/about",
+          "/contacto": "/en/contact",
+          "/testemunhos": "/en/testimonials",
+          "/galeria": "/en/gallery",
+          "/en": "/",
+          "/en/services": "/servicos",
+          "/en/menus": "/menus",
+          "/en/order": "/encomendar",
+          "/en/about": "/sobre",
+          "/en/contact": "/contacto",
+          "/en/testimonials": "/testemunhos",
+          "/en/gallery": "/galeria"
+        }[Astro.url.pathname] ?? (lang === "en" ? "/" : "/en")
+        }
+      >
+        {lang === "en" ? "Português" : "English"}
+      </a>
     </nav>
   </div>
 </header>
