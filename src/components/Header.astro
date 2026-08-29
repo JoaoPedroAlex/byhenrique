@@ -5,6 +5,27 @@ const { lang = "pt" } = Astro.props;
 
 const currentLang = lang === "en" ? languages.en : languages.pt;
 const otherLang = lang === "en" ? languages.pt : languages.en;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const languageUrl =
+  {
+    "/": "/en",
+    "/servicos": "/en/services",
+    "/menus": "/en/menus",
+    "/encomendar": "/en/order",
+    "/sobre": "/en/about",
+    "/contacto": "/en/contact",
+    "/testemunhos": "/en/testimonials",
+    "/galeria": "/en/gallery",
+    "/en": "/",
+    "/en/services": "/servicos",
+    "/en/menus": "/menus",
+    "/en/order": "/encomendar",
+    "/en/about": "/sobre",
+    "/en/contact": "/contacto",
+    "/en/testimonials": "/testemunhos",
+    "/en/gallery": "/galeria",
+  }[path] ?? (lang === "en" ? "/" : "/en");
 ---
 
 <header class="site-header">
@@ -21,28 +42,9 @@ const otherLang = lang === "en" ? languages.pt : languages.en;
       <a href={currentLang.gallery}>{lang === "en" ? "Gallery" : "Galeria"}</a>
       <a
         class="language-link"
-        href={
-        {
-          "/": "/en",
-          "/servicos": "/en/services",
-          "/menus": "/en/menus",
-          "/encomendar": "/en/order",
-          "/sobre": "/en/about",
-          "/contacto": "/en/contact",
-          "/testemunhos": "/en/testimonials",
-          "/galeria": "/en/gallery",
-          "/en": "/",
-          "/en/services": "/servicos",
-          "/en/menus": "/menus",
-          "/en/order": "/encomendar",
-          "/en/about": "/sobre",
-          "/en/contact": "/contacto",
-          "/en/testimonials": "/testemunhos",
-          "/en/gallery": "/galeria"
-        }[Astro.url.pathname] ?? (lang === "en" ? "/" : "/en")
-        }
+        href={languageUrl}
       >
-        {lang === "en" ? "Português" : "English"}
+      {lang === "en" ? "Português" : "English"}
       </a>
     </nav>
   </div>
