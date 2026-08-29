@@ -42,7 +42,11 @@ img {
 }
 
 .page-section {
-  padding: 40px 0;
+  padding: 64px 0;
+}
+
+.services-page .page-section {
+  padding: 32px 0;
 }
 
 .button {
