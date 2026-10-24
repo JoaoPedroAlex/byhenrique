@@ -756,6 +756,384 @@ p {
   font-weight: 900 !important;
 }
 
+/* Rates & Services */
+.rates-page {
+  --rates-ink: #422b1d;
+  --rates-wash: #f3e6d3;
+}
+
+.rates-hero {
+  padding: 72px 0 64px;
+  background:
+    radial-gradient(circle at 88% 14%, rgba(139, 74, 43, 0.12), transparent 27%),
+    linear-gradient(180deg, #fff8f0 0%, #f8eee3 100%);
+}
+
+.rates-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.rates-hero h1 {
+  color: var(--rates-ink);
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  letter-spacing: -0.045em;
+}
+
+.rates-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -8px 0 28px;
+  color: var(--brand);
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.rates-kicker span {
+  opacity: 0.55;
+}
+
+.rates-hero-image-wrap {
+  position: relative;
+  min-height: 540px;
+}
+
+.rates-hero-image {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  border-radius: 220px 220px 28px 28px;
+  box-shadow: 0 24px 60px rgba(66, 43, 29, 0.17);
+}
+
+.rates-hero-stamp {
+  position: absolute;
+  right: -18px;
+  bottom: 28px;
+  width: min(300px, 78%);
+  padding: 20px 22px;
+  border: 1px solid rgba(139, 74, 43, 0.28);
+  border-radius: 18px;
+  background: rgba(255, 248, 240, 0.94);
+  box-shadow: 0 14px 35px rgba(66, 43, 29, 0.14);
+}
+
+.rates-hero-stamp strong,
+.rates-hero-stamp span {
+  display: block;
+}
+
+.rates-hero-stamp strong {
+  color: var(--rates-ink);
+  font-size: 1.15rem;
+}
+
+.rates-hero-stamp span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.rates-heading {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.centered-heading {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.rate-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.rate-card {
+  position: relative;
+  padding: 32px;
+  overflow: hidden;
+  border: 1px solid #dcc6ad;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 36px rgba(66, 43, 29, 0.07);
+}
+
+.rate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: var(--brand);
+}
+
+.rate-card-name {
+  min-height: 48px;
+  margin-bottom: 22px;
+  color: var(--rates-ink);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rate-price {
+  margin: 0;
+  color: var(--rates-ink);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 0.95;
+}
+
+.rate-period {
+  margin: 6px 0 18px;
+  color: var(--muted);
+}
+
+.rate-meals {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--brand-dark);
+  font-weight: 800;
+}
+
+.rate-meals span {
+  margin: 0 4px;
+  opacity: 0.55;
+}
+
+.rates-note {
+  margin: 26px auto 0;
+  color: var(--brand-dark);
+  font-size: 1.05rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.serving-section {
+  background: var(--rates-ink);
+  color: #fff8f0;
+}
+
+.serving-section .eyebrow {
+  color: #e6b994;
+}
+
+.serving-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 248, 240, 0.2);
+}
+
+.serving-card {
+  padding: 32px;
+  border-right: 1px solid rgba(255, 248, 240, 0.2);
+}
+
+.serving-card:last-child {
+  border-right: 0;
+}
+
+.serving-card h3 {
+  text-transform: capitalize;
+}
+
+.serving-card p {
+  color: #decfc4;
+}
+
+.serving-number {
+  display: block;
+  margin-bottom: 28px;
+  color: #e6b994;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.details-card {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.details-card-featured {
+  grid-row: span 2;
+  padding: 36px;
+  background: var(--rates-wash);
+}
+
+.details-card h3:not(:first-child) {
+  margin-top: 26px;
+}
+
+.details-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.details-card li {
+  margin-bottom: 8px;
+}
+
+.guest-pricing {
+  padding: 0 !important;
+  list-style: none;
+}
+
+.guest-pricing li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.guest-pricing strong {
+  color: var(--brand);
+  text-align: right;
+}
+
+.detail-small {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.extras-section {
+  background: #f4eadf;
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.extras-list {
+  display: grid;
+  gap: 14px;
+}
+
+.extras-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid #dcc6ad;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.extras-list h3,
+.extras-list p {
+  margin-bottom: 4px;
+}
+
+.extras-list p {
+  color: var(--muted);
+}
+
+.extras-list strong {
+  color: var(--brand);
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+.rates-cta-section {
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+
+.rates-cta {
+  max-width: 850px;
+  text-align: center;
+}
+
+.rates-cta p:not(.eyebrow) {
+  max-width: 700px;
+  margin-right: auto;
+  margin-bottom: 28px;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+@media (max-width: 900px) {
+  .rates-hero-grid,
+  .extras-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rate-card-grid,
+  .serving-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .serving-grid {
+    border-top: 0;
+  }
+
+  .serving-card {
+    border-top: 1px solid rgba(255, 248, 240, 0.2);
+    border-right: 0;
+  }
+
+  .rates-hero-image-wrap,
+  .rates-hero-image {
+    min-height: 420px;
+    height: 420px;
+  }
+}
+
+@media (max-width: 680px) {
+  .rates-hero {
+    padding-top: 48px;
+  }
+
+  .rates-hero-image-wrap,
+  .rates-hero-image {
+    min-height: 340px;
+    height: 340px;
+  }
+
+  .rates-hero-stamp {
+    right: 12px;
+    bottom: -18px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-card-featured {
+    grid-row: auto;
+  }
+
+  .guest-pricing li,
+  .extras-list article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .guest-pricing strong {
+    text-align: left;
+  }
+}
+
 .menu-experience-card {
   align-content: start;
 }

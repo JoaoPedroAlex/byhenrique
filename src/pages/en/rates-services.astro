@@ -1,0 +1,245 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const experiences = [
+  {
+    name: "The Gathering",
+    price: "€500",
+    meals: "One meal per day",
+    description:
+      "A thoughtfully prepared Mediterranean meal with generous flavours, seasonal ingredients and a menu tailored to your occasion.",
+  },
+  {
+    name: "The Culinary Journey",
+    price: "€650",
+    meals: "Two meals per day",
+    description:
+      "A fuller culinary experience throughout the day, bringing together different dishes, flavours and traditions.",
+  },
+  {
+    name: "The Full Experience",
+    price: "€850",
+    meals: "Three meals per day",
+    description:
+      "A complete private-chef experience, with menus planned around your group, preferences and the rhythm of your stay.",
+  },
+];
+
+const servingStyles = [
+  {
+    title: "The art of the buffet",
+    description:
+      "A beautiful spread of Mediterranean flavours, thoughtfully prepared for guests to explore at their own pace. Ideal for relaxed gatherings and celebrations.",
+  },
+  {
+    title: "In the heart of the table",
+    description:
+      "My signature sharing experience. Generous dishes arrive in Portuguese ceramic platters, inviting everyone to reach, pass, taste and connect - the spirit behind Four Shores. One Table.",
+  },
+  {
+    title: "The plated experience",
+    description:
+      "For a more traditional dining style, each main course is individually plated and presented with care. Available for groups of up to 10 guests for the main course.",
+  },
+];
+---
+
+<BaseLayout
+  lang="en"
+  title="Rates & Services | Private Chef in Portugal | ByHenrique"
+  description="Private chef rates and services in Portugal, including daily chef experiences, serving styles, group supplements and optional extras."
+>
+  <main class="rates-page">
+    <section class="rates-hero">
+      <div class="container rates-hero-grid">
+        <div>
+          <p class="eyebrow">Four Shores. One Table.</p>
+          <h1>Rates &amp; Services</h1>
+          <p class="rates-kicker">Greece <span>•</span> Levant <span>•</span> Spain <span>•</span> Portugal</p>
+          <p class="lead">
+            My idea of luxury? A table full of beautiful food, a little taste of
+            different cultures, great company and someone saying, “Go on, have
+            some more!”
+          </p>
+          <p>
+            Inspired by Greece, the Levant, Spain and Portugal, my cooking
+            celebrates Mediterranean generosity. The best meals are measured in
+            the stories shared, the plates passed around and the people brought
+            closer together.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="/en/book">Request a personalised quote</a>
+            <a class="button secondary" href="/en/menus">Explore sample menus</a>
+          </div>
+        </div>
+
+        <div class="rates-hero-image-wrap">
+          <img
+            src="/images/paella.jpg"
+            alt="A Mediterranean dish prepared by private chef Henrique"
+            class="rates-hero-image"
+            width="1200"
+            height="900"
+          />
+          <div class="rates-hero-stamp">
+            <strong>Your table, your way</strong>
+            <span>Private chef experiences for every gathering</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section rates-experiences">
+      <div class="container">
+        <div class="rates-heading">
+          <p class="eyebrow">Private chef experiences</p>
+          <h2>Choose the rhythm of your stay.</h2>
+          <p class="lead">
+            Every gathering is different. Choose the experience that suits your
+            occasion, and let me take care of the menu, preparation, cooking and
+            presentation.
+          </p>
+        </div>
+
+        <div class="rate-card-grid">
+          {experiences.map((experience) => (
+            <article class="rate-card">
+              <p class="rate-card-name">{experience.name}</p>
+              <p class="rate-price">{experience.price}</p>
+              <p class="rate-period">per day</p>
+              <p class="rate-meals">{experience.meals} <span>•</span> Up to 10 guests</p>
+              <p>{experience.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <p class="rates-note">
+          All prices cover the chef’s service. Ingredients and groceries are
+          charged separately.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section serving-section">
+      <div class="container">
+        <div class="rates-heading centered-heading">
+          <p class="eyebrow">The way we gather</p>
+          <h2>Food served to suit the moment.</h2>
+        </div>
+
+        <div class="serving-grid">
+          {servingStyles.map((style, index) => (
+            <article class="serving-card">
+              <span class="serving-number">0{index + 1}</span>
+              <h3>{style.title}</h3>
+              <p>{style.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section details-section">
+      <div class="container">
+        <div class="rates-heading">
+          <p class="eyebrow">The details, beautifully taken care of</p>
+          <h2>What’s included, what’s separate.</h2>
+        </div>
+
+        <div class="details-grid">
+          <article class="details-card details-card-featured">
+            <h3>Your chef service includes</h3>
+            <p>Your daily chef fee covers:</p>
+            <ul>
+              <li>Menu planning and coordination</li>
+              <li>Grocery shopping and ingredient selection</li>
+              <li>Preparation and cooking</li>
+              <li>Presentation in your chosen serving style</li>
+              <li>Cleaning the kitchen and work areas used during service</li>
+            </ul>
+          </article>
+
+          <article class="details-card">
+            <h3>Ingredients &amp; groceries</h3>
+            <p>
+              Ingredients and groceries are not included in the daily chef fee.
+              They are charged separately, allowing the menu to be tailored to
+              your group.
+            </p>
+            <h3>Drinks</h3>
+            <p>
+              Guests purchase and provide their own drinks. I’m happy to suggest
+              wine pairings and non-alcoholic options.
+            </p>
+          </article>
+
+          <article class="details-card">
+            <h3>Table service</h3>
+            <p>
+              For groups of up to six guests, I can attend the table myself when
+              service allows. For larger groups, separate waiter service can be
+              arranged at an additional cost.
+            </p>
+          </article>
+
+          <article class="details-card">
+            <h3>Daily pricing &amp; group size</h3>
+            <ul class="guest-pricing">
+              <li><span>Up to 10 guests</span><strong>Included</strong></li>
+              <li><span>11–15 guests</span><strong>+€100 / day</strong></li>
+              <li><span>16–20 guests</span><strong>+€200 / day</strong></li>
+              <li><span>More than 20</span><strong>Personalised quote</strong></li>
+            </ul>
+            <p class="detail-small">
+              The supplement is added to the selected daily package. Ingredients
+              and groceries remain separate.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section extras-section">
+      <div class="container extras-grid">
+        <div>
+          <p class="eyebrow">A little extra magic</p>
+          <h2>Thoughtful finishing touches.</h2>
+          <p class="lead">
+            Optional extras are arranged on request and confirmed with advance
+            payment by bank transfer.
+          </p>
+        </div>
+
+        <div class="extras-list">
+          <article>
+            <div>
+              <h3>Flowers for the table</h3>
+              <p>Tailored to the table and the occasion.</p>
+            </div>
+            <strong>€25–€65</strong>
+          </article>
+          <article>
+            <div>
+              <h3>Birthday cake</h3>
+              <p>Small to medium cakes can be arranged.</p>
+            </div>
+            <strong>€75</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section rates-cta-section">
+      <div class="container rates-cta">
+        <p class="eyebrow">Let’s bring everyone to the table</p>
+        <h2>Tell me about the experience you have in mind.</h2>
+        <p>
+          Whether you are planning an intimate dinner, a family holiday, a
+          birthday or a gathering with friends, together we can shape a menu that
+          feels personal to you.
+        </p>
+        <a class="button" href="/en/book">Request your personalised quote</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

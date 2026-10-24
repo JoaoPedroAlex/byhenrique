@@ -4,7 +4,6 @@ import { languages } from "../data/i18n";
 const { lang = "pt" } = Astro.props;
 
 const currentLang = lang === "en" ? languages.en : languages.pt;
-const otherLang = lang === "en" ? languages.pt : languages.en;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 
 const languageUrl =
@@ -12,6 +11,7 @@ const languageUrl =
     "/": "/en",
     "/servicos": "/en/services",
     "/menus": "/en/menus",
+    "/en/rates-services": "/pt",
     "/encomendar": "/en/order",
     "/sobre": "/en/about",
     "/contacto": "/en/contact",
@@ -35,7 +35,9 @@ const languageUrl =
 
     <nav class="nav" aria-label={lang === "en" ? "Main navigation" : "Navegação principal"}>
       <a href={currentLang.services}>{lang === "en" ? "Services" : "Serviços"}</a>
-      <a href={currentLang.menus}>{lang === "en" ? "Menus" : "Menus"}</a>
+      <a href={lang === "en" ? "/en/rates-services" : currentLang.menus}>
+        {lang === "en" ? "Rates & Services" : "Menus"}
+      </a>
       <a href={currentLang.book}>{lang === "en" ? "Booking" : "Encomendar"}</a>
       <a href={currentLang.about}>{lang === "en" ? "About" : "Sobre"}</a>
       <a href={currentLang.contact}>{lang === "en" ? "Contact" : "Contacto"}</a>
