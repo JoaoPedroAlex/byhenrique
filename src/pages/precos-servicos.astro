@@ -1,0 +1,246 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const experiences = [
+  {
+    name: "The Gathering",
+    price: "€500",
+    meals: "Uma refeição por dia",
+    description:
+      "Uma refeição mediterrânica cuidadosamente preparada, com sabores generosos, ingredientes sazonais e um menu adaptado à ocasião.",
+  },
+  {
+    name: "The Culinary Journey",
+    price: "€650",
+    meals: "Duas refeições por dia",
+    description:
+      "Uma experiência gastronómica mais completa ao longo do dia, reunindo diferentes pratos, sabores e tradições.",
+  },
+  {
+    name: "The Full Experience",
+    price: "€850",
+    meals: "Três refeições por dia",
+    description:
+      "Uma experiência completa de chef privado, com menus planeados em função do grupo, das preferências e do ritmo da estadia.",
+  },
+];
+
+const servingStyles = [
+  {
+    title: "A arte do buffet",
+    description:
+      "Uma bonita seleção de sabores mediterrânicos, preparada para que os convidados possam explorar ao seu ritmo. Ideal para celebrações e encontros descontraídos.",
+  },
+  {
+    title: "No coração da mesa",
+    description:
+      "A minha experiência de partilha. Pratos generosos chegam à mesa em travessas de cerâmica portuguesa, convidando todos a provar, partilhar e criar ligações - o espírito de Four Shores. One Table.",
+  },
+  {
+    title: "A experiência empratada",
+    description:
+      "Para um estilo mais tradicional, cada prato principal é empratado individualmente e apresentado com cuidado. Disponível para grupos até 10 pessoas no prato principal.",
+  },
+];
+---
+
+<BaseLayout
+  lang="pt"
+  title="Preços & Serviços | Chef Privado em Portugal | ByHenrique"
+  description="Preços e serviços de chef privado em Portugal, incluindo experiências diárias, estilos de serviço, suplementos por grupo e extras opcionais."
+  alternateEn="/en/rates-services"
+  alternatePt="/precos-servicos"
+>
+  <main class="rates-page">
+    <section class="rates-hero">
+      <div class="container rates-hero-grid">
+        <div>
+          <p class="eyebrow">Four Shores. One Table.</p>
+          <h1>Preços &amp; Serviços</h1>
+          <p class="rates-kicker">Grécia <span>•</span> Levante <span>•</span> Espanha <span>•</span> Portugal</p>
+          <p class="lead">
+            A minha ideia de luxo? Uma mesa cheia de comida bonita, um pouco de
+            diferentes culturas, ótima companhia e alguém a dizer: “Vá, come
+            mais um pouco!”
+          </p>
+          <p>
+            Inspirada na Grécia, no Levante, em Espanha e Portugal, a minha
+            cozinha celebra a generosidade mediterrânica. As melhores refeições
+            medem-se pelas histórias partilhadas, pelos pratos que passam de mão
+            em mão e pelas pessoas que se aproximam.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="/encomendar">Pedir proposta personalizada</a>
+            <a class="button secondary" href="/menus">Explorar menus</a>
+          </div>
+        </div>
+
+        <div class="rates-hero-image-wrap">
+          <img
+            src="/images/OChefe.jpg"
+            alt="O chef privado Henrique"
+            class="rates-hero-image"
+            width="1200"
+            height="900"
+          />
+          <div class="rates-hero-stamp">
+            <strong>A tua mesa, à tua maneira</strong>
+            <span>Experiências de chef privado para cada ocasião</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section rates-experiences">
+      <div class="container">
+        <div class="rates-heading">
+          <p class="eyebrow">Experiências de chef privado</p>
+          <h2>Escolhe o ritmo da tua estadia.</h2>
+          <p class="lead">
+            Cada encontro é diferente. Escolhe a experiência que melhor se
+            adapta à ocasião e deixa comigo o menu, a preparação, a confeção e a
+            apresentação.
+          </p>
+        </div>
+
+        <div class="rate-card-grid">
+          {experiences.map((experience) => (
+            <article class="rate-card">
+              <p class="rate-card-name">{experience.name}</p>
+              <p class="rate-price">{experience.price}</p>
+              <p class="rate-period">por dia</p>
+              <p class="rate-meals">{experience.meals} <span>•</span> Até 10 pessoas</p>
+              <p>{experience.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <p class="rates-note">
+          Todos os preços incluem o serviço do chef. Os ingredientes e as
+          compras são cobrados separadamente.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section serving-section">
+      <div class="container">
+        <div class="rates-heading centered-heading">
+          <p class="eyebrow">A forma como nos reunimos</p>
+          <h2>Um serviço pensado para cada momento.</h2>
+        </div>
+
+        <div class="serving-grid">
+          {servingStyles.map((style, index) => (
+            <article class="serving-card">
+              <span class="serving-number">0{index + 1}</span>
+              <h3>{style.title}</h3>
+              <p>{style.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section details-section">
+      <div class="container">
+        <div class="rates-heading">
+          <p class="eyebrow">Todos os detalhes tratados com cuidado</p>
+          <h2>O que está incluído e o que é cobrado à parte.</h2>
+        </div>
+
+        <div class="details-grid">
+          <article class="details-card details-card-featured">
+            <h3>O serviço do chef inclui</h3>
+            <p>O valor diário inclui:</p>
+            <ul>
+              <li>Planeamento e coordenação do menu</li>
+              <li>Compra e seleção dos ingredientes</li>
+              <li>Preparação e confeção</li>
+              <li>Apresentação no estilo de serviço escolhido</li>
+              <li>Limpeza da cozinha e das áreas de trabalho utilizadas</li>
+            </ul>
+          </article>
+
+          <article class="details-card">
+            <h3>Ingredientes &amp; compras</h3>
+            <p>
+              Os ingredientes e as compras não estão incluídos no valor diário.
+              São cobrados separadamente, permitindo adaptar o menu ao grupo.
+            </p>
+            <h3>Bebidas</h3>
+            <p>
+              As bebidas são compradas e fornecidas pelos convidados. Terei
+              todo o gosto em sugerir vinhos e opções sem álcool.
+            </p>
+          </article>
+
+          <article class="details-card">
+            <h3>Serviço de mesa</h3>
+            <p>
+              Para grupos até seis pessoas, posso acompanhar a mesa quando o
+              serviço o permitir. Para grupos maiores, pode ser contratado um
+              empregado de mesa por um valor adicional.
+            </p>
+          </article>
+
+          <article class="details-card">
+            <h3>Preço diário &amp; dimensão do grupo</h3>
+            <ul class="guest-pricing">
+              <li><span>Até 10 pessoas</span><strong>Incluído</strong></li>
+              <li><span>11–15 pessoas</span><strong>+€100 / dia</strong></li>
+              <li><span>16–20 pessoas</span><strong>+€200 / dia</strong></li>
+              <li><span>Mais de 20</span><strong>Proposta personalizada</strong></li>
+            </ul>
+            <p class="detail-small">
+              O suplemento é acrescentado ao pacote diário selecionado. Os
+              ingredientes e as compras continuam a ser cobrados à parte.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section extras-section">
+      <div class="container extras-grid">
+        <div>
+          <p class="eyebrow">Um pouco de magia extra</p>
+          <h2>Pequenos detalhes que fazem a diferença.</h2>
+          <p class="lead">
+            Os extras opcionais são preparados mediante pedido e confirmados
+            com pagamento antecipado por transferência bancária.
+          </p>
+        </div>
+
+        <div class="extras-list">
+          <article>
+            <div>
+              <h3>Flores para a mesa</h3>
+              <p>Adaptadas à mesa e à ocasião.</p>
+            </div>
+            <strong>€25–€65</strong>
+          </article>
+          <article>
+            <div>
+              <h3>Bolo de aniversário</h3>
+              <p>Podem ser preparados bolos pequenos ou médios.</p>
+            </div>
+            <strong>€75</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section rates-cta-section">
+      <div class="container rates-cta">
+        <p class="eyebrow">Vamos reunir todos à mesa</p>
+        <h2>Conta-me a experiência que tens em mente.</h2>
+        <p>
+          Seja um jantar intimista, umas férias em família, um aniversário ou
+          um encontro com amigos, juntos podemos criar um menu verdadeiramente
+          pessoal.
+        </p>
+        <a class="button" href="/encomendar">Pedir proposta personalizada</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
