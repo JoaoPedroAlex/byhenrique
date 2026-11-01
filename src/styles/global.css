@@ -776,6 +776,11 @@ p {
   align-items: center;
 }
 
+.rates-hero-grid > :only-child {
+  grid-column: 1 / -1;
+  max-width: 860px;
+}
+
 .rates-hero h1 {
   color: var(--rates-ink);
   font-size: clamp(3.2rem, 7vw, 6.5rem);
