@@ -20,5 +20,9 @@ export default defineConfig({
     },
   },
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !["/menus/", "/en/menus/"].includes(new URL(page).pathname),
+    }),
+  ],
 });
