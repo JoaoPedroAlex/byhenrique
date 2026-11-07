@@ -40,25 +40,7 @@ const isEn = lang === "en";
       <input type="number" name="quantidade" min="1" required />
     </label>
 
-    <div class="menu-field" id="menu-field">
-      <label>
-        {isEn ? "Preferred menu" : "Menu pretendido"}
-        <select name="menu" id="menu">
-          <option value="">
-            {isEn ? "Select a menu..." : "Selecionar menu..."}
-          </option>
-          <option value="Laventenian Menu">Laventenian Menu</option>
-          <option value="Athena’s Table">Athena’s Table</option>
-          <option value="Fado Menu">Fado Menu</option>
-          <option value="custom">
-            {isEn ? "Custom proposal" : "Proposta personalizada"}
-          </option>
-        </select>
-      </label>
-    </div>
   </div>
-
-  <div class="selected-menu-note" id="selected-menu-note" hidden></div>
 
   <label>
     {isEn ? "Event location" : "Localidade / zona"}
@@ -107,37 +89,3 @@ const isEn = lang === "en";
     }
   </p>
 </form>
-
-<script define:vars={{ isEn }}>
-  const menus = {
-    laventenian: {
-      name: "Laventenian Menu",
-    },
-    "athenas-table": {
-      name: "Athena’s Table",
-    },
-    fado: {
-      name: "Fado Menu",
-    },
-  };
-
-  const params = new URLSearchParams(window.location.search);
-  const selectedMenuId = params.get("menu");
-
-  if (selectedMenuId && menus[selectedMenuId]) {
-    const selectedMenu = menus[selectedMenuId];
-
-    const menuInput = document.querySelector("#menu");
-    const selectedMenuNote = document.querySelector("#selected-menu-note");
-
-    if (menuInput) {
-      menuInput.value = selectedMenu.name;
-    }
-
-    if (selectedMenuNote) {
-      selectedMenuNote.hidden = false;
-      selectedMenuNote.innerHTML = `<strong>${isEn ? "Selected menu" : "Menu selecionado"}:</strong> ${selectedMenu.name}`;
-    }
-  }
-
-</script>
