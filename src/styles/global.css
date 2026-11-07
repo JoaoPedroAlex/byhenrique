@@ -487,6 +487,16 @@ button:hover {
   align-items: start;
 }
 
+.about-logo {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin-bottom: 32px;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(36, 25, 20, 0.08);
+}
+
 .about-card ul {
   margin: 0;
   padding-left: 20px;
