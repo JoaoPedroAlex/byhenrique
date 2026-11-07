@@ -10,7 +10,6 @@ const languageUrl =
   {
     "/": "/en",
     "/servicos": "/en/services",
-    "/menus": "/en/menus",
     "/precos-servicos": "/en/rates-services",
     "/en/rates-services": "/precos-servicos",
     "/encomendar": "/en/order",
@@ -21,7 +20,6 @@ const languageUrl =
     "/en": "/pt",
     "/pt": "/en",
     "/en/services": "/servicos",
-    "/en/menus": "/menus",
     "/en/order": "/encomendar",
     "/en/about": "/sobre",
     "/en/contact": "/contacto",
@@ -36,7 +34,6 @@ const languageUrl =
 
     <nav class="nav" aria-label={lang === "en" ? "Main navigation" : "Navegação principal"}>
       <a href={currentLang.services}>{lang === "en" ? "Services" : "Serviços"}</a>
-      <a href={currentLang.menus}>Menus</a>
       <a href={currentLang.book}>{lang === "en" ? "Booking" : "Encomendar"}</a>
       <a href={currentLang.about}>{lang === "en" ? "About" : "Sobre"}</a>
       <a href={currentLang.contact}>{lang === "en" ? "Contact" : "Contacto"}</a>
