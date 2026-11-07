@@ -21,6 +21,6 @@ export const languages = {
     about: "/en/about",
     contact: "/en/contact",
     testimonials: "/en/testimonials",
-    gallery: "/galeria",
+    gallery: "/en/gallery",
   },
 };

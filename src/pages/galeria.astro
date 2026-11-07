@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const { lang = "pt" } = Astro.props;
+const isEn = lang === "en";
+
 const galleryImages = [
   {
     src: "/images/IMG_4678.jpg",
@@ -226,19 +229,23 @@ const galleryImages = [
 ---
 
 <BaseLayout
-  title="Galeria | ByHenrique"
-  description="Galeria de pratos, menus e experiências gastronómicas preparadas por ByHenrique."
+  lang={lang}
+  title={isEn ? "Gallery | ByHenrique" : "Galeria | ByHenrique"}
+  description={isEn
+    ? "Gallery of dishes and private dining experiences prepared by ByHenrique."
+    : "Galeria de pratos, menus e experiências gastronómicas preparadas por ByHenrique."}
 >
   <main>
     <section class="page-section">
       <div class="container">
-        <p class="eyebrow">Galeria</p>
+        <p class="eyebrow">{isEn ? "Gallery" : "Galeria"}</p>
 
-        <h1>Pratos, menus e experiências</h1>
+        <h1>{isEn ? "Dishes and experiences" : "Pratos, menus e experiências"}</h1>
 
         <p class="lead">
-          Uma selecção de momentos, pratos e experiências gastronómicas criadas
-          para jantares privados, eventos e menus personalizados.
+          {isEn
+            ? "A selection of moments, dishes and dining experiences created for private dinners, events and personalised gatherings."
+            : "Uma selecção de momentos, pratos e experiências gastronómicas criadas para jantares privados, eventos e menus personalizados."}
         </p>
 
         <div class="gallery-grid">
