@@ -26,28 +26,6 @@ const isEn = lang === "en";
     </label>
 
     <label>
-  {isEn ? "Request type" : "Tipo de pedido"}
-
-  <select name="tipo_pedido" id="tipo_pedido" required>
-    <option value="">
-      {isEn ? "Select..." : "Selecionar..."}
-    </option>
-
-    <option value="chef-em-casa" selected>
-      {isEn ? "Private chef" : "Chef em casa"}
-    </option>
-
-    <option value="evento">
-      {isEn ? "Private event" : "Evento privado"}
-    </option>
-
-    <option value="outro">
-      {isEn ? "Other" : "Outro"}
-    </option>
-  </select>
-</label>
-
-    <label>
       {isEn ? "Preferred date" : "Data pretendida"}
       <input type="date" name="data" required />
     </label>
@@ -83,7 +61,7 @@ const isEn = lang === "en";
   <div class="selected-menu-note" id="selected-menu-note" hidden></div>
 
   <label>
-    {isEn ? "Location / area" : "Localidade / zona"}
+    {isEn ? "Event location" : "Localidade / zona"}
     <input type="text" name="localidade" />
   </label>
 
@@ -134,35 +112,17 @@ const isEn = lang === "en";
   const menus = {
     laventenian: {
       name: "Laventenian Menu",
-      category: "chef-em-casa",
     },
     "athenas-table": {
       name: "Athena’s Table",
-      category: "chef-em-casa",
     },
     fado: {
       name: "Fado Menu",
-      category: "chef-em-casa",
     },
   };
 
   const params = new URLSearchParams(window.location.search);
   const selectedMenuId = params.get("menu");
-
-  const menuField = document.querySelector("#menu-field");
-  const tipoPedidoSelect = document.querySelector("#tipo_pedido");
-
-  function updateMenuFieldVisibility() {
-    if (!menuField || !tipoPedidoSelect) return;
-
-    const shouldShowMenuField = tipoPedidoSelect.value === "chef-em-casa";
-
-    menuField.hidden = !shouldShowMenuField;
-  }
-
-  if (tipoPedidoSelect) {
-    tipoPedidoSelect.addEventListener("change", updateMenuFieldVisibility);
-  }
 
   if (selectedMenuId && menus[selectedMenuId]) {
     const selectedMenu = menus[selectedMenuId];
@@ -174,15 +134,10 @@ const isEn = lang === "en";
       menuInput.value = selectedMenu.name;
     }
 
-    if (tipoPedidoSelect) {
-      tipoPedidoSelect.value = selectedMenu.category;
-    }
-
     if (selectedMenuNote) {
       selectedMenuNote.hidden = false;
       selectedMenuNote.innerHTML = `<strong>${isEn ? "Selected menu" : "Menu selecionado"}:</strong> ${selectedMenu.name}`;
     }
   }
 
-  updateMenuFieldVisibility();
 </script>
