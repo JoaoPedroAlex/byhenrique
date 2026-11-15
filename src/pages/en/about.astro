@@ -8,6 +8,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   description="Learn more about ByHenrique, the cooking approach and personalised services."
 >
   <main>
+    <section class="page-section home-brand-statement">
+      <div class="container">
+        <img
+          src="/images/home-brand-statement.png"
+          alt="By Henrique: I cook without borders. I serve the soul of the Mediterranean. Flavour. Warmth. Generosity. Four Shores. One Table."
+          width="898"
+          height="768"
+          fetchpriority="high"
+        />
+      </div>
+    </section>
+
     <section class="page-section">
       <div class="container about-grid">
         <div>
@@ -75,3 +87,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  .home-brand-statement {
+    padding: 32px 0 0;
+  }
+
+  .home-brand-statement img {
+    display: block;
+    width: 100%;
+    max-width: 898px;
+    height: auto;
+    margin: 0 auto;
+  }
+</style>
