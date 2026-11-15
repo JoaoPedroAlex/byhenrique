@@ -1985,12 +1985,11 @@ textarea:focus-visible {
   .mobile-nav {
     display: block;
     position: absolute;
-    top: 50%;
+    top: 16px;
     right: 0;
-    z-index: 4;
+    z-index: 20;
     flex: 0 0 auto;
     margin-left: auto;
-    transform: translateY(-50%);
   }
 
   .mobile-nav summary {
@@ -2038,6 +2037,9 @@ textarea:focus-visible {
     top: 72px;
     right: 0;
     left: 0;
+    width: 100vw;
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
     display: grid;
     gap: 0;
     padding: 16px;
