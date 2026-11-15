@@ -1,4 +1,5 @@
 ---
+import BrandIntro from "../../components/BrandIntro.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -8,25 +9,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   description="Learn more about ByHenrique, the cooking approach and personalised services."
 >
   <main>
-    <section class="page-section home-brand-intro">
-      <div class="container">
-        <img
-          src="/images/four shores.jpeg"
-          alt="Four Shores. One Table. — Greece, Levant, Spain and Portugal"
-          class="about-logo"
-          width="1254"
-          height="1254"
-        />
-        <img
-          src="/images/home-brand-statement.png"
-          alt="By Henrique: I cook without borders. I serve the soul of the Mediterranean. Flavour. Warmth. Generosity. Four Shores. One Table."
-          class="home-brand-statement"
-          width="898"
-          height="768"
-          fetchpriority="high"
-        />
-      </div>
-    </section>
+    <BrandIntro lang="en" />
 
     <section class="page-section">
       <div class="container about-grid">
@@ -87,21 +70,3 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </section>
   </main>
 </BaseLayout>
-
-<style>
-  .home-brand-intro {
-    padding: 32px 0 0;
-  }
-
-  .home-brand-intro .about-logo {
-    margin: 0 auto 24px;
-  }
-
-  .home-brand-statement {
-    display: block;
-    width: 100%;
-    max-width: 898px;
-    height: auto;
-    margin: 0 auto;
-  }
-</style>

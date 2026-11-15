@@ -1,0 +1,117 @@
+---
+const { lang = "pt" } = Astro.props;
+const isEn = lang === "en";
+---
+
+<section class="page-section brand-intro">
+  <div class="container">
+    <img
+      src="/images/four shores.jpeg"
+      alt={isEn
+        ? "Four Shores. One Table. — Greece, Levant, Spain and Portugal"
+        : "Four Shores. One Table. — Grécia, Levante, Espanha e Portugal"}
+      class="about-logo"
+      width="1254"
+      height="1254"
+    />
+
+    {
+      isEn ? (
+        <img
+          src="/images/home-brand-statement.png"
+          alt="By Henrique: I cook without borders. I serve the soul of the Mediterranean. Flavour. Warmth. Generosity. Four Shores. One Table."
+          class="brand-statement-image"
+          width="898"
+          height="768"
+          fetchpriority="high"
+        />
+      ) : (
+        <div class="brand-statement">
+          <p class="brand-name">BY HENRIQUE</p>
+          <p class="brand-title">COZINHO SEM FRONTEIRAS.</p>
+          <p class="brand-mediterranean">SIRVO A ALMA DO MEDITERRÂNEO.</p>
+          <hr />
+          <p class="brand-values">SABOR. ACOLHIMENTO. GENEROSIDADE.</p>
+          <p class="brand-tagline">Four Shores. One Table.</p>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .brand-intro {
+    padding: 32px 0 0;
+  }
+
+  .brand-intro .about-logo {
+    margin: 0 auto 24px;
+  }
+
+  .brand-statement-image {
+    display: block;
+    width: 100%;
+    max-width: 898px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .brand-statement {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 898px;
+    margin: 0 auto;
+    padding: clamp(32px, 5vw, 52px);
+    border-radius: 32px;
+    background: #26221d;
+    color: #fff;
+    text-align: center;
+  }
+
+  .brand-statement p {
+    margin: 0;
+  }
+
+  .brand-statement .brand-name,
+  .brand-statement .brand-mediterranean {
+    color: #d9b786;
+  }
+
+  .brand-statement .brand-name {
+    margin: 0 0 20px;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    font-weight: 700;
+  }
+
+  .brand-statement .brand-title {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: clamp(2rem, 7vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .brand-statement .brand-mediterranean {
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .brand-statement hr {
+    margin: 28px 0;
+    border: 0;
+    border-top: 1px solid #977a59;
+  }
+
+  .brand-statement .brand-values {
+    font-size: clamp(1.25rem, 4vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .brand-statement .brand-tagline {
+    margin: 20px 0 0;
+    color: #e2d9ce;
+    font-size: clamp(1.15rem, 3vw, 1.8rem);
+  }
+</style>
