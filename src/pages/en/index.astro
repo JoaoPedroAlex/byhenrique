@@ -1,5 +1,14 @@
 ---
-import AboutPage from "./about.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ExperienceHome from "../../components/ExperienceHome.astro";
 ---
 
-<AboutPage />
+<BaseLayout
+  lang="en"
+  title="Private Chef in Portugal | ByHenrique"
+  description="A personalised private chef experience in Portugal, inspired by the culinary cultures of Portugal, Greece, Spain and the Levant."
+  alternateEn="/en/"
+  alternatePt="/pt/"
+>
+  <ExperienceHome lang="en" />
+</BaseLayout>

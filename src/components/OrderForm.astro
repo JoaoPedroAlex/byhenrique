@@ -9,6 +9,26 @@ const isEn = lang === "en";
 ---
 
 <form class="order-form" method="POST" action="https://formspree.io/f/xjglplld">
+  <input type="hidden" name="_subject" value={isEn ? "New ByHenrique experience enquiry" : "Novo pedido de experiência ByHenrique"} />
+
+  <div class="form-intro-note">
+    <strong>{isEn ? "A personal process from the first message" : "Um processo pessoal desde a primeira mensagem"}</strong>
+    <span>{isEn ? "Tell me what matters most. We will discuss the menu privately after I understand your occasion." : "Conta-me o que é mais importante. Conversaremos sobre o menu em privado depois de conhecer a ocasião."}</span>
+  </div>
+
+  <label>
+    {isEn ? "What are you celebrating or planning?" : "O que estás a celebrar ou planear?"}
+    <select name="ocasiao" required>
+      <option value="">{isEn ? "Select an occasion" : "Seleciona uma ocasião"}</option>
+      <option value="private-dinner">{isEn ? "Private dinner" : "Jantar privado"}</option>
+      <option value="birthday">{isEn ? "Birthday" : "Aniversário"}</option>
+      <option value="family-gathering">{isEn ? "Family gathering" : "Encontro de família"}</option>
+      <option value="wedding">{isEn ? "Wedding or intimate celebration" : "Casamento ou celebração intimista"}</option>
+      <option value="holiday">{isEn ? "Holiday or villa stay" : "Férias ou estadia em villa"}</option>
+      <option value="other">{isEn ? "Something else" : "Outra ocasião"}</option>
+    </select>
+  </label>
+
   <div class="form-grid">
     <label>
       {isEn ? "Name" : "Nome"}
@@ -50,8 +70,8 @@ const isEn = lang === "en";
   <label>
     {
       isEn
-        ? "Allergies or food intolerances"
-        : "Alergias ou intolerâncias alimentares"
+        ? "Food preferences, allergies or intolerances"
+        : "Preferências, alergias ou intolerâncias alimentares"
     }
     <textarea name="alergias" rows="3"></textarea>
   </label>
@@ -63,8 +83,8 @@ const isEn = lang === "en";
       rows="5"
       required
       placeholder={isEn
-        ? "Tell me what you need: occasion, number of guests, type of menu, approximate location, dietary restrictions, etc."
-        : "Conta-me o que pretendes: ocasião, número de pessoas, tipo de menu, morada aproximada, restrições alimentares, etc."}
+        ? "Tell me how you would like the evening to feel, what matters to your guests, and any ideas you already have."
+        : "Conta-me como gostarias que a ocasião fosse sentida, o que é importante para os convidados e as ideias que já tens."}
     ></textarea>
   </label>
 
@@ -79,13 +99,13 @@ const isEn = lang === "en";
     </span>
   </label>
 
-  <button type="submit">{isEn ? "Send request" : "Enviar pedido"}</button>
+  <button type="submit">{isEn ? "Send my enquiry" : "Enviar o meu pedido"}</button>
 
   <p class="form-note">
     {
       isEn
-        ? "Submitting this form does not automatically confirm the booking. I will contact you to confirm availability, details and final price."
-        : "O envio do formulário não confirma automaticamente a reserva. Entrarei em contacto para confirmar disponibilidade, detalhes e valor final."
+        ? "No commitment. I will personally reply to confirm availability and discuss your experience, menu and final proposal."
+        : "Sem compromisso. Responderei pessoalmente para confirmar a disponibilidade e conversar sobre a experiência, o menu e a proposta final."
     }
   </p>
 </form>

@@ -12,7 +12,7 @@ const languageUrl =
     "/servicos": "/en/services",
     "/precos-servicos": "/en/rates-services",
     "/en/rates-services": "/precos-servicos",
-    "/encomendar": "/en/order",
+    "/encomendar": "/en/book",
     "/sobre": "/en/about",
     "/contacto": "/en/contact",
     "/testemunhos": "/en/testimonials",
@@ -20,31 +20,45 @@ const languageUrl =
     "/en": "/pt",
     "/pt": "/en",
     "/en/services": "/servicos",
+    "/en/book": "/encomendar",
     "/en/order": "/encomendar",
     "/en/about": "/sobre",
     "/en/contact": "/contacto",
     "/en/testimonials": "/testemunhos",
     "/en/gallery": "/galeria",
   }[path] ?? (lang === "en" ? "/" : "/en");
+
+const navItems = [
+  { href: currentLang.services, label: lang === "en" ? "Experience" : "Experiência" },
+  { href: currentLang.about, label: lang === "en" ? "About" : "Sobre" },
+  { href: currentLang.testimonials, label: lang === "en" ? "Guest stories" : "Testemunhos" },
+  { href: currentLang.gallery, label: lang === "en" ? "Gallery" : "Galeria" },
+];
+
+const isCurrent = (href: string) => path === href.replace(/\/$/, "");
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href={currentLang.home}>ByHenrique</a>
+    <a class="logo" href={currentLang.home} aria-label={lang === "en" ? "ByHenrique home" : "Início ByHenrique"}>
+      <span>ByHenrique</span>
+      <small>Four Shores · One Table</small>
+    </a>
 
-    <nav class="nav" aria-label={lang === "en" ? "Main navigation" : "Navegação principal"}>
-      <a href={currentLang.services}>{lang === "en" ? "Services" : "Serviços"}</a>
-      <a href={currentLang.book}>{lang === "en" ? "Booking" : "Encomendar"}</a>
-      <a href={currentLang.about}>{lang === "en" ? "About" : "Sobre"}</a>
-      <a href={currentLang.contact}>{lang === "en" ? "Contact" : "Contacto"}</a>
-      <a href={currentLang.testimonials}>{lang === "en" ? "Testimonials" : "Testemunhos"}</a>
-      <a href={currentLang.gallery}>{lang === "en" ? "Gallery" : "Galeria"}</a>
-      <a
-        class="language-link"
-        href={languageUrl}
-      >
-      {lang === "en" ? "Português" : "English"}
-      </a>
+    <nav class="nav desktop-nav" aria-label={lang === "en" ? "Main navigation" : "Navegação principal"}>
+      {navItems.map((item) => <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>)}
+      <a class="language-link" href={languageUrl}>{lang === "en" ? "PT" : "EN"}</a>
+      <a class="header-cta" href={currentLang.book}>{lang === "en" ? "Check availability" : "Ver disponibilidade"}</a>
     </nav>
+
+    <details class="mobile-nav">
+      <summary>{lang === "en" ? "Menu" : "Menu"}<span aria-hidden="true"></span></summary>
+      <nav aria-label={lang === "en" ? "Mobile navigation" : "Navegação móvel"}>
+        {navItems.map((item) => <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>)}
+        <a href={currentLang.contact}>{lang === "en" ? "Contact" : "Contacto"}</a>
+        <a href={languageUrl}>{lang === "en" ? "Português" : "English"}</a>
+        <a class="header-cta" href={currentLang.book}>{lang === "en" ? "Check availability" : "Ver disponibilidade"}</a>
+      </nav>
+    </details>
   </div>
 </header>
