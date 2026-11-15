@@ -42,10 +42,10 @@ body {
 }
 
 .brand-manifesto-top img {
-  width: min(100%, 898px);
+  width: 100%;
   height: auto;
   margin: 0 auto;
-  border-radius: 32px;
+  border-radius: 24px;
   box-shadow: 0 22px 55px rgba(32, 27, 23, 0.16);
 }
 
@@ -1791,19 +1791,8 @@ textarea:focus-visible {
 }
 
 .four-shores-grid {
-  display: grid;
-  grid-template-columns: 0.86fr 1.14fr;
-  align-items: center;
-  gap: clamp(54px, 9vw, 120px);
-}
-
-.four-shores-image img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: contain;
-  border-radius: 22px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.32);
+  max-width: 860px;
+  text-align: center;
 }
 
 .four-shores-grid .eyebrow {
@@ -1812,6 +1801,8 @@ textarea:focus-visible {
 
 .four-shores-grid p:not(.eyebrow) {
   max-width: 650px;
+  margin-right: auto;
+  margin-left: auto;
   color: #d8cec4;
   font-size: 1.06rem;
 }
@@ -1957,7 +1948,7 @@ textarea:focus-visible {
   }
 
   .brand-manifesto-top img {
-    border-radius: 20px;
+    border-radius: 12px;
   }
 
   .site-header {
@@ -2116,10 +2107,6 @@ textarea:focus-visible {
 
   .section-copy {
     padding-top: 0;
-  }
-
-  .four-shores-grid {
-    gap: 44px;
   }
 
   .section-heading-row {
