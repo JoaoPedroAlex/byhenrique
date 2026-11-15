@@ -27,6 +27,28 @@ body {
   line-height: 1.6;
 }
 
+.container {
+  width: calc(100% - 32px);
+  max-width: var(--max-width);
+}
+
+.experience-home {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.brand-manifesto-top {
+  padding: clamp(24px, 4vw, 48px) 0 0;
+}
+
+.brand-manifesto-top img {
+  width: min(100%, 898px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 32px;
+  box-shadow: 0 22px 55px rgba(32, 27, 23, 0.16);
+}
+
 a {
   color: inherit;
 }
@@ -1778,6 +1800,8 @@ textarea:focus-visible {
 .four-shores-image img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
   border-radius: 22px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.32);
 }
@@ -1928,6 +1952,14 @@ textarea:focus-visible {
 }
 
 @media (max-width: 760px) {
+  .brand-manifesto-top {
+    padding-top: 18px;
+  }
+
+  .brand-manifesto-top img {
+    border-radius: 20px;
+  }
+
   .site-header {
     position: sticky;
   }
@@ -1952,8 +1984,13 @@ textarea:focus-visible {
 
   .mobile-nav {
     display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 4;
     flex: 0 0 auto;
     margin-left: auto;
+    transform: translateY(-50%);
   }
 
   .mobile-nav summary {
@@ -1997,10 +2034,10 @@ textarea:focus-visible {
   }
 
   .mobile-nav nav {
-    position: absolute;
+    position: fixed;
     top: 72px;
-    right: -16px;
-    left: -16px;
+    right: 0;
+    left: 0;
     display: grid;
     gap: 0;
     padding: 16px;
